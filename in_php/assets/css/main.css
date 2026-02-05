@@ -1044,3 +1044,79 @@ a.log-in-btn:hover:after {
     width: auto;
     transform: translateY(-50%);
 }
+
+/* Portfolio action buttons (below project cards) */
+.portfolio-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.portfolio-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #fff;
+    background: var(--color-primary);
+    border: 1px solid var(--color-primary);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease, color 0.2s ease;
+    text-decoration: none;
+}
+
+.portfolio-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 18px rgba(4, 110, 181, 0.22);
+    color: #fff;
+}
+
+.portfolio-btn.outline {
+    background: transparent;
+    color: var(--color-primary);
+}
+
+.portfolio-btn.outline:hover {
+    background: var(--color-primary);
+    color: #fff;
+}
+
+.portfolio-card {
+    text-align: left;
+}
+
+.portfolio-card .optech-portfolio-thumb {
+    border-radius: 18px 18px 0 0;
+}
+
+.portfolio-card .optech-portfolio-thumb:before,
+.portfolio-card .optech-portfolio-thumb::after {
+    opacity: 0;
+}
+
+.portfolio-card .optech-portfolio-thumb:hover::after {
+    opacity: 0;
+}
+
+.portfolio-card .optech-portfolio-thumb:hover img {
+    transform: scale(1.03);
+}
+
+.portfolio-card-body {
+    background: #fff;
+    padding: 20px 18px 22px;
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-top: 0;
+    border-radius: 0 0 18px 18px;
+}
+
+.portfolio-card-body h4 {
+    margin-bottom: 6px;
+}
+
+.portfolio-card-body p {
+    margin-bottom: 0;
+}
