@@ -1120,3 +1120,334 @@ a.log-in-btn:hover:after {
 .portfolio-card-body p {
     margin-bottom: 0;
 }
+
+/* Homepage refresh styles */
+.hero-premium {
+    position: relative;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    padding: 120px 0 100px;
+}
+
+.hero-premium-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, rgba(4, 16, 34, 0.88) 0%, rgba(4, 110, 181, 0.72) 100%);
+    z-index: 0;
+}
+
+.hero-premium-inner {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-home-copy h1 {
+    max-width: 12ch;
+    margin-bottom: 18px;
+}
+
+.hero-eyebrow,
+.section-kicker {
+    display: inline-flex;
+    align-items: center;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    margin-bottom: 18px;
+}
+
+.section-kicker {
+    background: rgba(4, 110, 181, 0.08);
+    color: var(--color-primary);
+}
+
+.hero-cta-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.hero-whatsapp-btn {
+    background: #25d366;
+    color: #fff !important;
+}
+
+.hero-whatsapp-btn:hover {
+    color: #fff !important;
+    transform: translateY(-2px);
+}
+
+.hero-trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 0;
+    margin: 28px 0 0;
+    list-style: none;
+}
+
+.hero-trust-badges li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.hero-trust-badges i {
+    color: #7ef1a8;
+}
+
+.hero-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.hero-stat-card {
+    padding: 18px 16px;
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px);
+    text-align: center;
+}
+
+.hero-stat-card strong {
+    display: block;
+    font-size: 30px;
+    line-height: 1;
+    margin-bottom: 6px;
+    color: #fff;
+}
+
+.hero-stat-card span {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    color: #fff;
+}
+
+.hero-premium-form {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-premium-form select {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #0f172a;
+    min-height: 54px;
+}
+
+.hero-premium-form select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+}
+
+.service-note {
+    max-width: 760px;
+    margin: 0 auto 18px;
+    color: #5b6472;
+}
+
+.home-feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 22px 0 0;
+}
+
+.home-feature-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    color: #243246;
+}
+
+.home-feature-list i {
+    color: var(--color-primary);
+    margin-top: 4px;
+    font-size: 18px;
+}
+
+.why-choose-list {
+    display: grid;
+    gap: 18px;
+    margin-top: 26px;
+}
+
+.why-choose-item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 18px 20px;
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+}
+
+.why-choose-item i {
+    flex: 0 0 46px;
+    height: 46px;
+    width: 46px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(4, 110, 181, 0.1);
+    color: var(--color-primary);
+    font-size: 22px;
+}
+
+.why-choose-item h4 {
+    margin-bottom: 6px;
+    font-size: 18px;
+}
+
+.why-choose-item p {
+    margin-bottom: 0;
+    color: #5b6472;
+}
+
+.technology-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.technology-badges span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 16px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid rgba(4, 110, 181, 0.14);
+    color: #0f172a;
+    font-weight: 600;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+}
+
+.faq-accordion {
+    max-width: 880px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    padding: 0;
+    border-radius: 18px;
+    background: #fff;
+    border: 1px solid rgba(4, 110, 181, 0.12);
+    margin-bottom: 14px;
+    overflow: hidden;
+}
+
+.faq-item .init-header {
+    margin: 0;
+    padding: 18px 22px;
+    cursor: pointer;
+}
+
+.faq-item .init-body {
+    padding: 0 22px 20px;
+}
+
+.tech-pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+.tech-pill-grid span {
+    padding: 10px 16px;
+    border-radius: 999px;
+    background: #fff;
+    border: 1px solid rgba(4, 110, 181, 0.12);
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.floating-contact-actions {
+    position: fixed;
+    left: 18px;
+    bottom: 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 9998;
+}
+
+.floating-contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.22);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-contact-btn:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 18px 34px rgba(15, 23, 42, 0.28);
+}
+
+.floating-whatsapp-btn {
+    background: #25d366;
+}
+
+.floating-call-btn {
+    background: var(--color-primary);
+}
+
+.floating-contact-btn i {
+    font-size: 18px;
+}
+
+.contact-cta-section .optech-cta-content p,
+.home-cta-section .optech-cta-content p {
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 991px) {
+    .hero-premium {
+        padding: 100px 0 84px;
+    }
+
+    .hero-home-copy h1 {
+        max-width: none;
+    }
+
+    .hero-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .floating-contact-actions {
+        left: 14px;
+        bottom: 14px;
+    }
+}

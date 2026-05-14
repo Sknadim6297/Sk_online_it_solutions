@@ -17,7 +17,7 @@ function validate_email($email) {
 }
 
 // Function to save submission to file as backup
-function save_submission_to_file($name, $email, $phone, $message) {
+function save_submission_to_file($name, $email, $phone, $service, $message) {
     $uploads_dir = __DIR__ . '/submissions';
     if (!is_dir($uploads_dir)) {
         @mkdir($uploads_dir, 0755, true);
@@ -30,6 +30,9 @@ function save_submission_to_file($name, $email, $phone, $message) {
     $content .= "Name: " . $name . "\n";
     $content .= "Email: " . $email . "\n";
     $content .= "Phone: " . $phone . "\n";
+    if (!empty($service)) {
+        $content .= "Service: " . $service . "\n";
+    }
     $content .= "-------------------------------\n";
     $content .= "Message:\n" . $message . "\n";
     $content .= "=== END SUBMISSION ===\n\n";
@@ -43,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = isset($_POST['name']) ? sanitize_input($_POST['name']) : '';
     $email = isset($_POST['email']) ? sanitize_input($_POST['email']) : '';
     $phone = isset($_POST['phone']) ? sanitize_input($_POST['phone']) : '';
+    $service = isset($_POST['service']) ? sanitize_input($_POST['service']) : '';
     $message = isset($_POST['message']) ? sanitize_input($_POST['message']) : '';
     
     // Validation
@@ -63,6 +67,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } elseif (!preg_match('/^[0-9]{10}$/', str_replace(['-', ' '], '', $phone))) {
         $errors[] = 'Invalid phone number format';
     }
+
+    if (!empty($service) && strlen($service) > 100) {
+        $errors[] = 'Invalid service selection';
+    }
     
     if (empty($message)) {
         $errors[] = 'Message is required';
@@ -78,14 +86,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             'errors' => $errors
         ]);
         exit;
-        // Save submission to file as backup
-        save_submission_to_file($name, $email, $phone, $message);
     
     }
+
+    // Save submission to file as backup
+    save_submission_to_file($name, $email, $phone, $service, $message);
     
     // Email configuration
     $to = 'skonlineitsolution@gmail.com'; // Replace with your email
-    $subject = 'New Contact Form Submission from Sk Online Service and IT Solution Website';
+    $subject = !empty($service)
+        ? 'New ' . $service . ' Inquiry from Sk Online Service and IT Solution Website'
+        : 'New Contact Form Submission from Sk Online Service and IT Solution Website';
     
     // Email headers
     $headers = "MIME-Version: 1.0\r\n";
@@ -126,6 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <span class='field-label'>Phone:</span><br>
                     " . $phone . "
                 </div>
+                " . (!empty($service) ? "<div class='field'><span class='field-label'>Service:</span><br>" . $service . "</div>" : "") . "
                 <div class='field'>
                     <span class='field-label'>Message:</span><br>
                     " . nl2br($message) . "
@@ -169,6 +181,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <p>Dear " . $name . ",</p>
                     <p>We have received your message and will get back to you as soon as possible.</p>
                     <p>Our team typically responds within 24-48 hours during business days.</p>
+                    " . (!empty($service) ? "<p><strong>Service Requested:</strong> " . $service . "</p>" : "") . "
                     <p><strong>Your Message:</strong></p>
                     <p>" . nl2br($message) . "</p>
                     <p>Best regards,<br><strong>Sk Online Service and IT Solution</strong></p>

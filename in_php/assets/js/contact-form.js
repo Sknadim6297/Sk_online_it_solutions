@@ -5,40 +5,34 @@ document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('form');
     
     forms.forEach(form => {
-        const submitBtn = form.querySelector('button[id*="form-btn"]');
-        
-        if (submitBtn) {
-            submitBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                handleFormSubmit(form);
-            });
-        }
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            handleFormSubmit(form);
+        });
     });
     
-    // Also handle form submission on Enter key
+    // Keep textarea enter behavior predictable on long messages
     document.addEventListener('keypress', function(e) {
         if (e.key === 'Enter' && e.target.tagName === 'TEXTAREA') {
-            e.preventDefault();
-            const form = e.target.closest('form');
-            if (form) {
-                handleFormSubmit(form);
-            }
+            e.stopPropagation();
         }
     });
 });
 
 function handleFormSubmit(form) {
     // Get form inputs
-    const nameInput = form.querySelector('input[placeholder="Your name"]');
-    const emailInput = form.querySelector('input[placeholder*="Email"]');
-    const phoneInput = form.querySelector('input[placeholder*="Phone"]');
-    const messageInput = form.querySelector('textarea[placeholder*="message"]');
+    const nameInput = form.querySelector('[name="name"], input[placeholder="Your name"]');
+    const emailInput = form.querySelector('[name="email"], input[placeholder*="Email"]');
+    const phoneInput = form.querySelector('[name="phone"], input[placeholder*="Phone"]');
+    const serviceInput = form.querySelector('[name="service"]');
+    const messageInput = form.querySelector('[name="message"], textarea[placeholder*="message"], textarea[name="textarea"]');
     const submitBtn = form.querySelector('button');
     
     // Get values
     const name = nameInput ? nameInput.value.trim() : '';
     const email = emailInput ? emailInput.value.trim() : '';
     const phone = phoneInput ? phoneInput.value.trim() : '';
+    const service = serviceInput ? serviceInput.value.trim() : '';
     const message = messageInput ? messageInput.value.trim() : '';
     
     // Validation
@@ -70,6 +64,15 @@ function handleFormSubmit(form) {
     } else {
         removeError(phoneInput);
     }
+
+    if (serviceInput) {
+        if (!service) {
+            errors.push('Please select a service');
+            highlightError(serviceInput);
+        } else {
+            removeError(serviceInput);
+        }
+    }
     
     if (!message) {
         errors.push('Please enter your message');
@@ -92,6 +95,9 @@ function handleFormSubmit(form) {
     formData.append('name', name);
     formData.append('email', email);
     formData.append('phone', phone);
+    if (service) {
+        formData.append('service', service);
+    }
     formData.append('message', message);
     
     // Show loading state

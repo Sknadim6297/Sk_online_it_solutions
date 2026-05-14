@@ -66,7 +66,7 @@
                   </div>
                 </div>
                 <div class="col-lg-12">
-                  <button id="optech-main-form-btn" type="button" data-text="Send Message"> <span class="btn-wraper">Send Message</span> </button>
+                  <button id="optech-main-form-btn" type="submit" data-text="Send Message"> <span class="btn-wraper">Send Message</span> </button>
                 </div>
               </div>
             </form>

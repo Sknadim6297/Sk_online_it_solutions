@@ -1,3 +1,38 @@
+<?php
+$currentPage = basename($_SERVER['PHP_SELF']);
+$seoMap = [
+  'index.php' => [
+    'title' => 'Website, App & Software Development Company in Kolkata | Sk Online Service and IT Solution',
+    'description' => 'Sk Online Service and IT Solution builds websites, mobile apps, software platforms, and AI automation solutions for businesses in Kolkata and beyond.',
+    'keywords' => 'website development Kolkata, app development Kolkata, software development company Kolkata, AI automation services, IT solutions Kolkata'
+  ],
+  'service.php' => [
+    'title' => 'IT Services in Kolkata | Web, App, Software & Digital Solutions',
+    'description' => 'Explore our full range of IT and digital services including website development, app development, software solutions, branding, and support.',
+    'keywords' => 'IT services Kolkata, website development, app development, software solutions, digital services'
+  ],
+  'contact.php' => [
+    'title' => 'Contact Sk Online Service and IT Solution | Kolkata IT Company',
+    'description' => 'Contact our Kolkata-based team for website development, mobile apps, software solutions, and AI automation projects.',
+    'keywords' => 'contact Kolkata IT company, website quote Kolkata, app development contact'
+  ],
+  'portfolio.php' => [
+    'title' => 'Portfolio | Sk Online Service and IT Solution',
+    'description' => 'View selected website, app, and branding projects completed by Sk Online Service and IT Solution.',
+    'keywords' => 'portfolio website development, app portfolio, software project examples'
+  ],
+];
+
+$seoData = $seoMap[$currentPage] ?? [
+  'title' => 'Sk Online Service and IT Solution',
+  'description' => 'Sk Online Service and IT Solution provides website, app, software, and digital services from Kolkata.',
+  'keywords' => 'website development, app development, software development, Kolkata IT services'
+];
+
+$pageTitle = $pageTitle ?? $seoData['title'];
+$pageDescription = $pageDescription ?? $seoData['description'];
+$pageKeywords = $pageKeywords ?? $seoData['keywords'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,7 +45,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sk Online Service and IT Solution - Professional IT Solutions & Digital Services</title>
+  <title><?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?></title>
+  <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+  <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords, ENT_QUOTES, 'UTF-8'); ?>">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
+  <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+  <meta property="og:type" content="website">
 
   <link rel="shortcut icon" href="assets/images/logo/header_logo-removebg.png" type="image/x-icon">
   <link rel="icon" href="assets/images/logo/header_logo-removebg.png" type="image/x-icon">
@@ -31,6 +72,26 @@
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
+
+  <?php if ($currentPage === 'index.php') : ?>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Sk Online Service and IT Solution",
+    "description": "Website, app, software, and AI automation company based in Kolkata.",
+    "email": "skonlineitsolution@gmail.com",
+    "telephone": "+91-6297616918",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Kolkata",
+      "addressRegion": "West Bengal",
+      "addressCountry": "IN"
+    },
+    "areaServed": "Kolkata"
+  }
+  </script>
+  <?php endif; ?>
 </head>
 
 <body>
