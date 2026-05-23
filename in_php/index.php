@@ -143,7 +143,7 @@ include 'header.php';
   </div>
   <!-- End section -->
 
-  <div class="section large-padding-tb4 overflow-hidden">
+  <div class="section large-padding-tb4 overflow-hidden bg-light1">
     <div class="container">
       <div class="row align-items-center g-4">
         <div class="col-lg-6">
@@ -197,9 +197,9 @@ include 'header.php';
   </div>
   <!-- End section -->
 
-  <div class="section optech-section-padding dark-bg">
+  <div class="section optech-section-padding2 bg-light1">
     <div class="container">
-      <div class="optech-section-title light-color center">
+      <div class="optech-section-title center">
         <h2>Selected Work That Builds Trust</h2>
         <p>We keep the portfolio visible, relevant, and easy to understand for new clients.</p>
       </div>
@@ -232,24 +232,24 @@ include 'header.php';
         <p class="text-muted">A practical stack for modern websites, apps, and business software.</p>
       </div>
       <div class="technology-badges">
-        <span>HTML5</span>
-        <span>CSS3</span>
-        <span>Bootstrap</span>
+        <span>HTML</span>
+        <span>CSS</span>
         <span>JavaScript</span>
-        <span>PHP</span>
+        <span>Tailwind CSS</span>
+        <span>Bootstrap</span>
         <span>MySQL</span>
-        <span>WordPress</span>
+        <span>PHP</span>
+        <span>Laravel</span>
         <span>React</span>
-        <span>Android</span>
-        <span>Flutter</span>
-        <span>AI Tools</span>
-        <span>Automation</span>
+        <span>Express.js</span>
+        <span>Node.js</span>
+        <span>MongoDB</span>
       </div>
     </div>
   </div>
   <!-- End section -->
 
-  <div class="section optech-section-padding2">
+  <div class="section optech-section-padding2 bg-light1">
     <div class="container">
       <div class="optech-section-title center">
         <span class="hero-eyebrow">Fresh from the blog</span>
@@ -272,7 +272,7 @@ include 'header.php';
   </div>
   <!-- End section -->
 
-  <div class="section optech-section-padding">
+  <div class="section optech-section-padding2 bg-light1">
     <div class="container">
       <div class="optech-section-title center">
         <h2>Client Reviews</h2>
@@ -376,7 +376,7 @@ include 'header.php';
   </div>
   <!-- End section -->
 
-  <div class="section optech-section-padding2 bg-white">
+  <div class="section optech-section-padding2 bg-light1">
     <div class="container">
       <div class="optech-section-title center">
         <h2>Frequently Asked Questions</h2>
@@ -412,13 +412,14 @@ include 'header.php';
   </div>
   <!-- End section -->
 
-  <div class="section bg-cover optech-section-padding home-cta-section" style="background-image: url(assets/images/cta/cta-bg3.png)">
+  <div class="section optech-section-padding2 bg-light1 home-cta-section">
     <div class="container">
-      <div class="optech-cta-wrap">
+      <div class="home-cta-card" data-aos="fade-up" data-aos-duration="600">
         <div class="optech-cta-content center">
+          <span class="hero-eyebrow hero-eyebrow--light">Let's work together</span>
           <h2>Ready to discuss your next website, app, or software project?</h2>
           <p>Get a clear plan, fast response, and a team that keeps the conversation focused on results.</p>
-          <div class="hero-cta-row justify-content-center" data-aos="fade-up" data-aos-duration="800">
+          <div class="hero-cta-row justify-content-center">
             <a class='optech-default-btn optech-white-btn' data-text='Contact Us Now' href='contact'><span class="btn-wraper">Contact Us Now</span></a>
             <a class='optech-default-btn hero-whatsapp-btn' data-text='WhatsApp Us' href='https://wa.me/916297616918?text=Hi%20Sk%20Online%20Service%20and%20IT%20Solution,%20I%20need%20a%20quote.' target="_blank" rel="noopener"><span class="btn-wraper">WhatsApp Us</span></a>
           </div>
