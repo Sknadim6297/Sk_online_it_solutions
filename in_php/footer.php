@@ -89,6 +89,7 @@
                 <li><a href='service'>All Services</a></li>
                 <li><a href='pricing'>Pricing</a></li>
                 <li><a href='portfolio'>Portfolio</a></li>
+                <li><a href='blog'>Blog</a></li>
                 <li><a href='contact'>Contact Us</a></li>
               </ul>
             </div>
@@ -118,6 +119,7 @@
                 <li><a href='pricing'>Pricing</a></li>
                 <li><a href='portfolio'>Portfolio</a></li>
                 <li><a href='service'>Services</a></li>
+                <li><a href='blog'>Blog</a></li>
                 <li><a href='tel:6297616918'>Call Now</a></li>
                 <li><a href='https://wa.me/916297616918?text=Hi%20Sk%20Online%20Service%20and%20IT%20Solution,%20I%20need%20a%20quote.' target="_blank" rel="noopener">WhatsApp</a></li>
               </ul>

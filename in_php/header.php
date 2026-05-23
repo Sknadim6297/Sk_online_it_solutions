@@ -21,6 +21,11 @@ $seoMap = [
     'description' => 'View selected website, app, and branding projects completed by Sk Online Service and IT Solution.',
     'keywords' => 'portfolio website development, app portfolio, software project examples'
   ],
+  'blog.php' => [
+    'title' => 'Blog | Sk Online Service and IT Solution',
+    'description' => 'Practical articles on web development, SEO, mobile apps, and digital business growth.',
+    'keywords' => 'IT blog Kolkata, SEO articles, web development tips'
+  ],
 ];
 
 $seoData = $seoMap[$currentPage] ?? [
@@ -32,6 +37,10 @@ $seoData = $seoMap[$currentPage] ?? [
 $pageTitle = $pageTitle ?? $seoData['title'];
 $pageDescription = $pageDescription ?? $seoData['description'];
 $pageKeywords = $pageKeywords ?? $seoData['keywords'];
+$pageCanonical = $pageCanonical ?? null;
+$pageOgImage = $pageOgImage ?? null;
+$pageTwitterCard = $pageTwitterCard ?? 'summary_large_image';
+$pageSchemaMarkup = $pageSchemaMarkup ?? null;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -49,9 +58,22 @@ $pageKeywords = $pageKeywords ?? $seoData['keywords'];
   <meta name="description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
   <meta name="keywords" content="<?php echo htmlspecialchars($pageKeywords, ENT_QUOTES, 'UTF-8'); ?>">
   <meta name="robots" content="index, follow">
+  <?php if (!empty($pageCanonical)) : ?>
+  <link rel="canonical" href="<?php echo htmlspecialchars($pageCanonical, ENT_QUOTES, 'UTF-8'); ?>">
+  <meta property="og:url" content="<?php echo htmlspecialchars($pageCanonical, ENT_QUOTES, 'UTF-8'); ?>">
+  <?php endif; ?>
   <meta property="og:title" content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
   <meta property="og:description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
   <meta property="og:type" content="website">
+  <?php if (!empty($pageOgImage)) : ?>
+  <meta property="og:image" content="<?php echo htmlspecialchars($pageOgImage, ENT_QUOTES, 'UTF-8'); ?>">
+  <?php endif; ?>
+  <meta name="twitter:card" content="<?php echo htmlspecialchars($pageTwitterCard, ENT_QUOTES, 'UTF-8'); ?>">
+  <meta name="twitter:title" content="<?php echo htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8'); ?>">
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8'); ?>">
+  <?php if (!empty($pageOgImage)) : ?>
+  <meta name="twitter:image" content="<?php echo htmlspecialchars($pageOgImage, ENT_QUOTES, 'UTF-8'); ?>">
+  <?php endif; ?>
 
   <link rel="shortcut icon" href="assets/images/logo/header_logo-removebg.png" type="image/x-icon">
   <link rel="icon" href="assets/images/logo/header_logo-removebg.png" type="image/x-icon">
@@ -64,7 +86,7 @@ $pageKeywords = $pageKeywords ?? $seoData['keywords'];
   <link rel="stylesheet" href="assets/css/magnific-popup.css">
   <link rel="stylesheet" href="assets/css/slick.css">
   <link rel="stylesheet" href="assets/css/fontawesome.css">
-  <link rel="stylesheet" href="assets/css/remixicon.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.6.0/fonts/remixicon.css">
   <link rel="stylesheet" href="assets/css/aos.css">
 
 
@@ -72,6 +94,15 @@ $pageKeywords = $pageKeywords ?? $seoData['keywords'];
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
+  <?php if (!empty($loadBlogAssets)) : ?>
+  <link rel="stylesheet" href="assets/css/blog.css">
+  <?php endif; ?>
+
+  <?php if (!empty($pageSchemaMarkup)) : ?>
+  <script type="application/ld+json">
+  <?php echo $pageSchemaMarkup; ?>
+  </script>
+  <?php endif; ?>
 
   <?php if ($currentPage === 'index.php') : ?>
   <script type="application/ld+json">
@@ -185,6 +216,9 @@ $pageKeywords = $pageKeywords ?? $seoData['keywords'];
                   </li>
                   <li class="nav-item nav-item-has-children">
                     <a href="portfolio" class="nav-link-item">Portfolio</a>
+                  </li>
+                  <li class="nav-item nav-item-has-children">
+                    <a href="blog" class="nav-link-item">Blog</a>
                   </li>
                   <li class="nav-item">
                     <a class='nav-link-item' href='contact'>Contact</a>

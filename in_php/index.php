@@ -1,4 +1,10 @@
-<?php include 'header.php'; ?>
+<?php
+require_once __DIR__ . '/includes/blog_app.php';
+require_once __DIR__ . '/includes/blog_frontend.php';
+$latestBlogPosts = blog_get_recent_posts(3);
+$loadBlogAssets = true;
+include 'header.php';
+?>
 
   <div class="optech-hero-section5 hero-premium" style="background-image: url(assets/images/hero/hero-bg2.png)">
     <div class="hero-premium-overlay"></div>
@@ -238,6 +244,29 @@
         <span>Flutter</span>
         <span>AI Tools</span>
         <span>Automation</span>
+      </div>
+    </div>
+  </div>
+  <!-- End section -->
+
+  <div class="section optech-section-padding2">
+    <div class="container">
+      <div class="optech-section-title center">
+        <span class="hero-eyebrow">Fresh from the blog</span>
+        <h2>Latest Blogs</h2>
+        <p>Short, practical articles that support SEO, trust, and repeat visits.</p>
+      </div>
+      <?php if ($latestBlogPosts) : ?>
+      <div class="snf-blog-home-grid">
+        <?php foreach ($latestBlogPosts as $blogPost) : ?>
+          <?php blog_render_post_card($blogPost, 'grid'); ?>
+        <?php endforeach; ?>
+      </div>
+      <?php else : ?>
+      <p class="text-center text-muted">New articles will appear here soon.</p>
+      <?php endif; ?>
+      <div class="text-center mt-4">
+        <a class='optech-default-btn' href='blog' data-text='Visit Blog'><span class="btn-wraper">Visit Blog</span></a>
       </div>
     </div>
   </div>
