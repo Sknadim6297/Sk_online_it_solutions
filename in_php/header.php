@@ -271,33 +271,25 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
         <div class="optech-sidemenu-logo">
           <a href="#"><img src="assets/images/logo/header_logo.png" alt="Sk Online Service and IT Solution" style="width: 150px !important; height: auto !important;"></a>
         </div>
-        <p>Vast numbers of employees now work remotely, and it's too late to develop a set of remote-work policies if you didn't already have one.</p>
+        <p>Sk Online Service and IT Solution helps businesses build websites, mobile apps, and software products with practical support, clear delivery, and a modern digital approach.</p>
         <div class="optech-social-icon-box style-two">
           <ul>
             <li>
-              <a href="https://www.facebook.com/">
+              <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
                 <i class="ri-facebook-fill"></i>
               </a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/">
+              <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <i class="ri-linkedin-fill"></i>
               </a>
             </li>
             <li>
-              <a href="https://twitter.com/">
-                <i class="ri-twitter-fill"></i>
-              </a>
-            </li>
-            <li>
-              <a href="https://www.instagram.com/">
+              <a href="https://www.instagram.com/skonlineitsolutions?igsh=bTZ3ajRndDd4b2lw&utm_source=qr" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                 <i class="ri-instagram-fill"></i>
               </a>
             </li>
           </ul>
-        </div>
-        <div class="optech-sidemenu-thumb">
-          <img src="assets/images/hero/hero-bg1.png" alt="">
         </div>
         <div class="optech-contact-info-wrap">
           <div class="optech-contact-info">

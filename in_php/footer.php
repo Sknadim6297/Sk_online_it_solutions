@@ -65,12 +65,7 @@
                     </a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/">
-                      <i class="ri-twitter-fill"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://www.instagram.com/">
+                    <a href="https://www.instagram.com/skonlineitsolutions?igsh=bTZ3ajRndDd4b2lw&utm_source=qr">
                       <i class="ri-instagram-fill"></i>
                     </a>
                   </li>

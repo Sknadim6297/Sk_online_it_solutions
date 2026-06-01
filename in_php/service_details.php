@@ -78,9 +78,9 @@
   </div>
   <!-- End section -->
 
-  <div class="section bg-cover optech-section-padding" style="background-image: url(assets/images/cta/cta-bg3.png)">
+  <div class="section optech-section-padding bg-light1 home-cta-section">
     <div class="container">
-      <div class="optech-cta-wrap">
+      <div class="optech-cta-wrap home-cta-card">
         <div class="optech-cta-content center">
           <h2>Let's work together</h2>
           <p>Each demo built with Teba will look different. You can customize anything appearance of your website with only a few clicks</p>

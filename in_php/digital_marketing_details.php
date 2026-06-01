@@ -81,9 +81,9 @@
   </div>
   <!-- End section -->
 
-  <div class="section bg-cover optech-section-padding" style="background-image: url(assets/images/cta/cta-bg3.png)">
+  <div class="section optech-section-padding bg-light1 home-cta-section">
     <div class="container">
-      <div class="optech-cta-wrap">
+      <div class="optech-cta-wrap home-cta-card">
         <div class="optech-cta-content center">
           <h2>Let's work together</h2>
           <p>Ready to accelerate your digital growth? Partner with us to create powerful marketing campaigns that deliver real results</p>
