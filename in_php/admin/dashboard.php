@@ -1,11 +1,13 @@
 <?php
 require_once __DIR__ . '/../includes/blog_app.php';
+require_once __DIR__ . '/../includes/careers_app.php';
 blog_require_login();
 
 $pageTitle = 'Dashboard';
-$pageSubtitle = 'Overview of your blog performance and recent activity.';
+$pageSubtitle = 'Overview of content, careers, and recent activity.';
 $activeMenu = 'dashboard';
 $stats = blog_dashboard_stats();
+$openRoles = careers_count_active();
 $recentPosts = blog_get_posts_list(['page' => 1], 5)['items'];
 $includeChartJs = true;
 $userName = blog_current_user()['name'] ?? 'Admin';
@@ -16,10 +18,10 @@ include __DIR__ . '/includes/header.php';
 <section class="admin-welcome">
   <div>
     <h2>Welcome back, <?php echo blog_escape(explode(' ', $userName)[0]); ?>!</h2>
-    <p>Manage your blog posts, categories, tags, and SEO from one place.</p>
+    <p>Manage blog posts, careers, categories, and SEO from one place.</p>
   </div>
   <div class="admin-welcome-actions">
-    <a href="posts.php" class="btn-ghost"><i class="ri-list-check-2"></i> All Posts</a>
+    <a href="careers.php" class="btn-ghost"><i class="ri-briefcase-4-line"></i> Careers</a>
     <a href="post-form.php" class="btn-white"><i class="ri-add-line"></i> Create Post</a>
   </div>
 </section>
@@ -41,10 +43,10 @@ include __DIR__ . '/includes/header.php';
   </div>
   <div class="admin-stat">
     <div class="admin-stat-body">
-      <span>Drafts</span>
-      <strong><?php echo (int) $stats['draft_posts']; ?></strong>
+      <span>Open Roles</span>
+      <strong><?php echo (int) $openRoles; ?></strong>
     </div>
-    <div class="admin-stat-icon admin-stat-icon--amber"><i class="ri-draft-line"></i></div>
+    <div class="admin-stat-icon admin-stat-icon--amber"><i class="ri-briefcase-4-line"></i></div>
   </div>
   <div class="admin-stat">
     <div class="admin-stat-body">

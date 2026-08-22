@@ -216,6 +216,38 @@ function blog_init_schema(PDO $pdo): void
     $pdo->exec('CREATE INDEX IF NOT EXISTS idx_tags_deleted_at ON tags(deleted_at)');
 
     blog_seed_defaults($pdo);
+
+    // Careers openings (managed from admin)
+    $pdo->exec("CREATE TABLE IF NOT EXISTS careers (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        title TEXT NOT NULL,
+        employment_type TEXT NOT NULL DEFAULT 'Full-time',
+        location TEXT NOT NULL DEFAULT 'Kolkata',
+        experience TEXT NULL,
+        description TEXT NOT NULL,
+        apply_url TEXT NULL,
+        status TEXT NOT NULL DEFAULT 'published',
+        sort_order INTEGER NOT NULL DEFAULT 0,
+        deleted_at TEXT NULL,
+        created_at TEXT NOT NULL,
+        updated_at TEXT NOT NULL
+    )");
+    $pdo->exec('CREATE INDEX IF NOT EXISTS idx_careers_status ON careers(status)');
+    $pdo->exec('CREATE INDEX IF NOT EXISTS idx_careers_deleted ON careers(deleted_at)');
+
+    $careersCount = (int) $pdo->query('SELECT COUNT(*) FROM careers WHERE deleted_at IS NULL')->fetchColumn();
+    if ($careersCount === 0) {
+        $now = blog_now();
+        $seedJobs = [
+            ['Frontend Developer', 'Full-time', 'Kolkata / Hybrid', '1–3 years experience', 'Build responsive UI with HTML, CSS, JavaScript, and modern frameworks. Collaborate with design and backend.'],
+            ['PHP / Laravel Developer', 'Full-time', 'Kolkata / Hybrid', '2+ years experience', 'Develop and maintain business applications, APIs, and admin systems with clean, secure PHP code.'],
+            ['Digital Marketing Intern', 'Internship', 'Kolkata', 'Freshers welcome', 'Support SEO, content, and campaign work for client projects and our own growth channels.'],
+        ];
+        $jobStmt = $pdo->prepare('INSERT INTO careers (title, employment_type, location, experience, description, apply_url, status, sort_order, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)');
+        foreach ($seedJobs as $i => $row) {
+            $jobStmt->execute([$row[0], $row[1], $row[2], $row[3], $row[4], 'contact', 'published', $i + 1, $now, $now]);
+        }
+    }
 }
 
 function blog_seed_defaults(PDO $pdo): void

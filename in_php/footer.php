@@ -37,8 +37,8 @@
           <h5>Company</h5>
           <ul>
             <li><a href="about_us">About Us</a></li>
-            <li><a href="portfolio">Leadership Work</a></li>
-            <li><a href="contact">We're Hiring!</a></li>
+            <li><a href="team">Our Team</a></li>
+            <li><a href="careers">Careers</a></li>
             <li><a href="blog">Articles &amp; News</a></li>
             <li><a href="contact">Legal Notices</a></li>
           </ul>

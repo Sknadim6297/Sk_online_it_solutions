@@ -97,6 +97,7 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
   <link rel="stylesheet" href="assets/css/nazora-home.css">
+  <link rel="stylesheet" href="assets/css/nazora-theme.css">
   <?php if (!empty($loadBlogAssets)) : ?>
   <link rel="stylesheet" href="assets/css/blog.css">
   <?php endif; ?>
@@ -128,7 +129,7 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
   <?php endif; ?>
 </head>
 
-<body<?php echo (!empty($loadNazoraHome) || $currentPage === 'index.php') ? ' class="nazora-home"' : ''; ?>>
+<body class="nazora-theme<?php echo ($currentPage === 'index.php' || !empty($loadNazoraHome)) ? ' nazora-home' : ''; ?>">
 
   <div class="optech-preloader-wrap nz-preloader" id="nz-preloader" aria-hidden="true">
     <div class="nz-preloader-inner">
@@ -196,10 +197,9 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
       <div class="container">
         <div class="header-bottom-border border-color-light nz-header-bar">
           <nav class="navbar site-navbar nz-navbar">
-            <!-- Brand Logo-->
             <div class="brand-logo">
-              <a href='index'>
-                <img src="assets/images/logo/nazora-logo.png" alt="<?php echo htmlspecialchars($company, ENT_QUOTES, 'UTF-8'); ?>" class="light-version-logo">
+              <a href="index">
+                <img src="assets/images/logo/nazora-logo.png" alt="<?php echo htmlspecialchars($company, ENT_QUOTES, 'UTF-8'); ?>">
               </a>
             </div>
             <div class="menu-block-wrapper">
@@ -212,7 +212,7 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
                   <div class="current-menu-title"></div>
                   <div class="mobile-menu-close">&times;</div>
                 </div>
-                <ul class="site-menu-main light-color">
+                <ul class="site-menu-main">
                   <li class="nav-item">
                     <a href="index" class="nav-link-item">Home</a>
                   </li>
@@ -220,19 +220,19 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
                     <a href="#" class="nav-link-item drop-trigger">Pages <i class="ri-arrow-down-s-fill"></i></a>
                     <ul class="sub-menu" id="submenu-2">
                       <li class="sub-menu--item">
-                        <a href='about_us'>
-                          <span class="menu-item-text">About Us</span>
-                        </a>
+                        <a href="about_us"><span class="menu-item-text">About Us</span></a>
                       </li>
                       <li class="sub-menu--item">
-                        <a href='pricing'>
-                          <span class="menu-item-text">Pricing</span>
-                        </a>
+                        <a href="team"><span class="menu-item-text">Our Team</span></a>
                       </li>
                       <li class="sub-menu--item">
-                        <a href='service'>
-                          <span class="menu-item-text">Service</span>
-                        </a>
+                        <a href="careers"><span class="menu-item-text">Careers</span></a>
+                      </li>
+                      <li class="sub-menu--item">
+                        <a href="pricing"><span class="menu-item-text">Pricing</span></a>
+                      </li>
+                      <li class="sub-menu--item">
+                        <a href="service"><span class="menu-item-text">Service</span></a>
                       </li>
                     </ul>
                   </li>
@@ -243,26 +243,24 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
                     <a href="blog" class="nav-link-item">Blog</a>
                   </li>
                   <li class="nav-item">
-                    <a class='nav-link-item' href='contact'>Contact</a>
+                    <a class="nav-link-item" href="contact">Contact</a>
                   </li>
                 </ul>
               </nav>
             </div>
-            <div class="nz-header-cta d-none d-lg-inline-flex">
-              <a class="nz-header-btn" href="contact">Get a Quote</a>
+            <div class="nz-header-actions">
+              <a class="nz-header-btn d-none d-lg-inline-flex" href="contact">Get a Quote</a>
+              <button type="button" class="optech-header-barger nz-menu-btn d-none d-md-inline-flex" aria-label="Open menu">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 50 50" aria-hidden="true">
+                  <path fill="currentColor" d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"></path>
+                </svg>
+              </button>
+              <button type="button" class="mobile-menu-trigger nz-menu-btn d-inline-flex d-md-none" aria-label="Open navigation">
+                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 50 50" aria-hidden="true">
+                  <path fill="currentColor" d="M 0 7.5 L 0 12.5 L 50 12.5 L 50 7.5 Z M 0 22.5 L 0 27.5 L 50 27.5 L 50 22.5 Z M 0 37.5 L 0 42.5 L 50 42.5 L 50 37.5 Z"></path>
+                </svg>
+              </button>
             </div>
-            <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
-              <div class="optech-header-icon">
-                <div class="optech-header-barger light-color">
-                  <span></span>
-                </div>
-              </div>
-            </div>
-            <!-- mobile menu trigger -->
-            <div class="mobile-menu-trigger light-color">
-              <span></span>
-            </div>
-            <!--/.Mobile Menu Hamburger Ends-->
           </nav>
         </div>
 
@@ -271,30 +269,14 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
 
   </header>
 
-
-  <div class="optech-header-search-section">
-    <div class="container">
-      <div class="optech-header-search-box">
-        <input type="search" placeholder="Search here...">
-        <button id="header-search" type="button"><i class="ri-search-line"></i></button>
-        <p>Type above and press Enter to search. Press Close to cancel.</p>
-      </div>
-    </div>
-    <div class="optech-header-search-close">
-      <i class="ri-close-line"></i>
-    </div>
-  </div>
-  <div class="search-overlay"></div>
-  <!--End search -->
-
-  <div class="optech-sidemenu-wraper">
+  <div class="optech-sidemenu-wraper nz-sidemenu">
     <div class="optech-sidemenu-column">
       <div class="optech-sidemenu-body">
         <div class="optech-sidemenu-logo">
-          <a href="index"><img src="assets/images/logo/nazora-logo.png" alt="<?php echo htmlspecialchars($company, ENT_QUOTES, 'UTF-8'); ?>" style="width: 160px !important; height: auto !important;"></a>
+          <a href="index"><img src="assets/images/logo/nazora-logo.png" alt="<?php echo htmlspecialchars($company, ENT_QUOTES, 'UTF-8'); ?>"></a>
         </div>
         <p><?php echo htmlspecialchars($company, ENT_QUOTES, 'UTF-8'); ?> helps businesses build websites, mobile apps, and software products with practical support, clear delivery, and a modern digital approach.</p>
-        <div class="optech-social-icon-box style-two">
+        <div class="optech-social-icon-box style-two nz-side-social">
           <ul>
             <li>
               <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -311,14 +293,18 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
                 <i class="ri-instagram-fill"></i>
               </a>
             </li>
+            <li>
+              <a href="<?php echo site_whatsapp_url(); ?>" target="_blank" rel="noopener" aria-label="WhatsApp">
+                <i class="ri-whatsapp-fill"></i>
+              </a>
+            </li>
           </ul>
         </div>
-        <div class="optech-contact-info-wrap">
+        <div class="optech-contact-info-wrap nz-side-contact">
           <div class="optech-contact-info">
             <i class="ri-map-pin-2-fill"></i>
             <h5>Address</h5>
-            <p>Kestopur, Kolkata<br>
-              India</p>
+            <p>Kestopur, Kolkata<br>India</p>
           </div>
           <div class="optech-contact-info">
             <i class="ri-mail-fill"></i>
@@ -327,14 +313,12 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
             <a href="tel:6297616918">+91-6297616918</a>
           </div>
         </div>
-
       </div>
       <span class="optech-sidemenu-close">
         <i class="ri-close-line"></i>
       </span>
     </div>
     <div class="offcanvas-overlay"></div>
-
   </div>
 
   <div class="offcanves-menu"></div>

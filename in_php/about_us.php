@@ -1,6 +1,6 @@
 <?php include 'header.php'; ?>
 
-	<div class="optech-breadcrumb" style="background-color: #046eb5;">
+	<div class="optech-breadcrumb nz-breadcrumb">
 		<div class="container">
 			<h1 class="post__title">About Us</h1>
 			<nav class="breadcrumbs">
@@ -34,8 +34,8 @@
 				<div class="col-lg-6 d-flex align-items-center">
 					<div class="optech-default-content ml40">
 						<h2>Your Complete IT & Service Solution Partner</h2>
-					<p><?php echo htmlspecialchars(site_company_name(), ENT_QUOTES, 'UTF-8'); ?> is a comprehensive service provider based in Kestopur, Kolkata, India. We offer a unique blend of professional IT solutions for global clients and essential local services for the community. From cutting-edge web development to government documentation and cyber cafe services, we are your one-stop solution.</p>
-						<p>Founded with a vision to bridge technology and practical everyday needs, we've successfully served over 150+ clients ranging from startups seeking digital transformation to individuals needing government documentation assistance. Our diverse team ensures quality service delivery across all categories, building trust and long-term relationships.</p>
+					<p><?php echo htmlspecialchars(site_company_name(), ENT_QUOTES, 'UTF-8'); ?> is a Kolkata-based technology partner delivering websites, mobile apps, software platforms, and AI automation for businesses that want clear results.</p>
+						<p>Founded with a focus on practical delivery, we've helped 100+ clients move from idea to launch with transparent pricing, fast communication, and long-term support.</p>
 						<div class="optech-extra-mt">
 							<a class='optech-default-btn' data-text='Get In Touch' href='contact'><span class="btn-wraper">Get In Touch</span></a>
 						</div>
@@ -66,14 +66,13 @@
 				<div class="col-lg-6 d-flex align-items-center">
 					<div class="optech-default-content mr40">
 						<h2>Our Comprehensive Service Portfolio</h2>
-						<p>We offer a complete range of IT, digital, government documentation, and local services to meet all your business and personal needs.</p>
+						<p>We offer a focused range of digital products and services to help your business grow online.</p>
 						<div class="optech-icon-list">
 							<ul>
-								<li><i class="ri-check-line"></i><strong>💻 IT & Digital Solutions</strong><br>Website development, mobile apps, software solutions, digital marketing, logo design, and maintenance services.</li>
-								<li><i class="ri-check-line"></i><strong>🗂 Government & Documentation Services</strong><br>Aadhaar, voter ID, PF, certificates, E-Shram registration, government schemes, and online form filling.</li>
-								<li><i class="ri-check-line"></i><strong>🖨 Cyber Cafe & Office Services</strong><br>DTP work, printing, scanning, xerox, photo editing, lamination, resume making, and design services.</li>
-								<li><i class="ri-check-line"></i><strong>💳 Utility & Payment Services</strong><br>Bill payments, money transfer, bus/train/flight booking, and property documentation.</li>
-								<li><i class="ri-check-line"></i><strong>🎨 Design & Printing Services</strong><br>Logo design, wedding cards, business cards, posters, ID cards, and invitation cards.</li>
+								<li><i class="ri-check-line"></i><strong>Website Development</strong><br>Business websites, landing pages, and corporate sites built to convert.</li>
+								<li><i class="ri-check-line"></i><strong>App &amp; Software Solutions</strong><br>Android/iOS apps, CRM, ERP, and internal tools tailored to your workflow.</li>
+								<li><i class="ri-check-line"></i><strong>Digital Growth</strong><br>SEO, marketing support, and AI automation to improve speed and results.</li>
+								<li><i class="ri-check-line"></i><strong>Ongoing Support</strong><br>Maintenance, updates, and practical guidance after launch.</li>
 							</ul>
 						</div>
 						<div class="optech-extra-mt">

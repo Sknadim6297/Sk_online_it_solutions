@@ -235,10 +235,11 @@ include 'header.php';
       </div>
       <div class="nz-addon-grid">
         <article class="nz-addon-card">
-          <img src="assets/images/v2/illustration1.svg" alt="Extra users">
+          <img src="assets/images/v2/illustration1.svg" alt="Team access">
           <div>
             <h4>Team Access</h4>
             <p>Add collaborators, roles, and client logins so every stakeholder stays aligned without extra tools.</p>
+            <a class="nz-addon-link" href="service">Learn More</a>
           </div>
         </article>
         <article class="nz-addon-card">
@@ -246,6 +247,7 @@ include 'header.php';
           <div>
             <h4>Post Integrations</h4>
             <p>Connect CRM, WhatsApp, payment gateways, and analytics so your stack works as one system.</p>
+            <a class="nz-addon-link" href="service">Learn More</a>
           </div>
         </article>
         <article class="nz-addon-card">
@@ -253,13 +255,15 @@ include 'header.php';
           <div>
             <h4>Profitability Report</h4>
             <p>Live dashboards that surface revenue, costs, and growth signals your leadership can act on.</p>
+            <a class="nz-addon-link" href="service">Learn More</a>
           </div>
         </article>
-        <article class="nz-addon-card is-active">
-          <img src="assets/images/v3/service1.png" alt="Manage orders">
+        <article class="nz-addon-card">
+          <img src="assets/images/v2/illustration4.svg" alt="Manage orders">
           <div>
             <h4>Manage Orders</h4>
             <p>Order, inventory, and fulfilment flows designed for retail and service businesses that move fast.</p>
+            <a class="nz-addon-link" href="service">Learn More</a>
           </div>
         </article>
       </div>
@@ -346,7 +350,7 @@ include 'header.php';
         <div>
           <span class="nz-kicker is-light">Start Your Project</span>
           <h2>Navigating Growth, Elevating Businesses: Nazora's Path to Success</h2>
-          <a class="optech-default-btn" data-text="Get a Free Quote" href="contact"><span class="btn-wraper">Get a Free Quote</span></a>
+          <a class="nz-solid-btn" href="contact">Get a Free Quote</a>
         </div>
         <div class="nz-download-visual" aria-hidden="true">
           <div class="nz-download-phone">
@@ -376,6 +380,23 @@ include 'header.php';
   <section class="nz-section nz-consult">
     <div class="container">
       <div class="nz-consult-card">
+        <form action="send_email.php" method="POST" class="nz-form">
+          <div class="row-fields">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="tel" name="phone" placeholder="Phone number" required>
+          </div>
+          <input type="email" name="email" placeholder="Email address" required>
+          <select name="service" required>
+            <option value="" selected disabled>Select service</option>
+            <option value="Website Development">Website Development</option>
+            <option value="App Development">App Development</option>
+            <option value="Software Development">Software Development</option>
+            <option value="SEO">SEO</option>
+            <option value="AI Automation">AI Automation</option>
+          </select>
+          <textarea name="message" placeholder="Write your message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
         <div>
           <span class="nz-kicker">Free Consultation</span>
           <h2>Tell us what you want to build</h2>
@@ -391,23 +412,6 @@ include 'header.php';
             </li>
           </ul>
         </div>
-        <form action="send_email.php" method="POST">
-          <div class="row-fields">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="tel" name="phone" placeholder="Phone number" required>
-          </div>
-          <input type="email" name="email" placeholder="Email address" required>
-          <select name="service" required>
-            <option value="" selected disabled>Select service</option>
-            <option value="Website Development">Website Development</option>
-            <option value="App Development">App Development</option>
-            <option value="Software Development">Software Development</option>
-            <option value="SEO">SEO</option>
-            <option value="Documentation Service">Documentation Service</option>
-          </select>
-          <textarea name="message" placeholder="Write your message" required></textarea>
-          <button type="submit">Send Message</button>
-        </form>
       </div>
     </div>
   </section>

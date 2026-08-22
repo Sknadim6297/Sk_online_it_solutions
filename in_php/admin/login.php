@@ -37,9 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="admin-login-wrap">
     <section class="admin-login-hero">
       <div>
-        <img src="../assets/images/logo/header_logo-removebg.png" alt="<?php echo blog_escape(site_company_name()); ?>" class="login-logo">
-        <h1>Admin Control Center</h1>
-        <p>Manage blog content, SEO settings, and media from one premium dashboard.</p>
+        <img src="../assets/images/logo/nazora-logo.png" alt="<?php echo blog_escape(site_company_name()); ?>" class="login-logo">
+        <h1>Nazora TECH Admin</h1>
+        <p>Manage blog content, careers, SEO, and media from one dashboard.</p>
       </div>
     </section>
 

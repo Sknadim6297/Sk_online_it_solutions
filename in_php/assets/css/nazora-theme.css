@@ -1,0 +1,1087 @@
+/* Nazora TECH — sitewide theme */
+:root {
+  --nz-navy: #0b1526;
+  --nz-navy-deep: #07101c;
+  --nz-red: #c41e3a;
+  --nz-red-dark: #9b1530;
+  --nz-ink: #121826;
+  --nz-muted: #5f6b7a;
+  --nz-line: #e6ebf2;
+  --nz-soft: #f5f7fb;
+  --nz-white: #ffffff;
+  --nz-header-h: 128px;
+  --color-primary: #0b1526;
+  --accent-color: #c41e3a;
+  --accent-bg: #c41e3a;
+  /* Override Optech blue tokens */
+  --heading-color: #0b1526;
+  --dark-bg: #0b1526;
+  --dark-bg2: #0b1526;
+  --dark-bg3: #163056;
+}
+
+@media (max-width: 991px) {
+  :root {
+    --nz-header-h: 72px;
+  }
+}
+
+body.nazora-theme {
+  background: var(--nz-white);
+  color: var(--nz-ink);
+  font-family: "Sora", sans-serif;
+}
+
+/* ——— Preloader ——— */
+.nz-preloader.optech-preloader-wrap,
+#nz-preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f4f6fa;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+#nz-preloader.is-done,
+.nz-preloader.is-done {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.nz-preloader-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 36px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 18px 48px rgba(11, 21, 38, 0.12);
+}
+
+.nz-preloader-logo {
+  width: min(170px, 52vw);
+  height: auto;
+  display: block;
+}
+
+.nz-preloader-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.nz-preloader-dots span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--nz-red);
+  animation: nz-dot 0.9s ease-in-out infinite;
+}
+
+.nz-preloader-dots span:nth-child(2) {
+  animation-delay: 0.15s;
+  background: var(--nz-navy);
+}
+
+.nz-preloader-dots span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes nz-dot {
+  0%, 80%, 100% { transform: scale(0.7); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+
+/* ——— Header: light bar so dark logo stays crisp ——— */
+.nz-site-header.site-header.optech-header-section {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+}
+
+.nz-header-top,
+.nz-site-header .optech-header-top {
+  background: var(--nz-navy-deep) !important;
+  border-bottom: 0;
+  padding: 8px 0 !important;
+}
+
+.nz-header-info {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.nz-header-info .optech-header-info ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nz-header-info .optech-header-info li,
+.nz-header-info .optech-header-info a {
+  color: rgba(255, 255, 255, 0.88) !important;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.nz-header-info i {
+  color: var(--nz-red);
+  margin-right: 6px;
+}
+
+.nz-header-bottom,
+.nz-site-header .optech-header-bottom {
+  background: #ffffff !important;
+  border-bottom: 1px solid var(--nz-line);
+  box-shadow: 0 8px 24px rgba(11, 21, 38, 0.06);
+}
+
+.nz-site-header.sticky-menu .optech-header-top {
+  margin-top: -48px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.nz-site-header.sticky-menu .nz-header-bottom {
+  box-shadow: 0 10px 30px rgba(11, 21, 38, 0.12);
+}
+
+.nz-header-bar {
+  border: 0 !important;
+  padding: 10px 0 !important;
+}
+
+.nz-navbar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px;
+  width: 100%;
+  min-height: 62px;
+}
+
+.nz-site-header .brand-logo {
+  max-width: 156px;
+  margin: 0 12px 0 0 !important;
+  flex: 0 0 auto;
+  background: transparent !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  order: 0;
+}
+
+.nz-site-header .brand-logo a {
+  display: inline-flex;
+  align-items: center;
+  background: transparent;
+  line-height: 0;
+}
+
+.nz-site-header .brand-logo img {
+  width: 140px !important;
+  max-height: 56px !important;
+  height: auto !important;
+  object-fit: contain;
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  mix-blend-mode: normal;
+  filter: none;
+}
+
+.nz-site-header .menu-block-wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.nz-site-header .site-menu-main .nav-link-item {
+  color: var(--nz-navy) !important;
+  font-weight: 600;
+  padding: 10px 14px !important;
+}
+
+.nz-site-header .site-menu-main .nav-link-item:hover,
+.nz-site-header .site-menu-main .nav-link-item.active {
+  color: var(--nz-red) !important;
+}
+
+/* Dropdown menu — kill old blue */
+.nazora-theme .site-menu-main .sub-menu {
+  background: #fff !important;
+  border: 1px solid var(--nz-line) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 16px 40px rgba(11, 21, 38, 0.12) !important;
+  padding: 10px 0 !important;
+}
+
+.nazora-theme .site-menu-main .sub-menu--item,
+.nazora-theme .site-menu-main .sub-menu--item > a,
+.nazora-theme .site-menu-main .sub-menu--item > a .menu-item-text {
+  color: var(--nz-navy) !important;
+}
+
+.nazora-theme .site-menu-main .sub-menu--item > a:hover,
+.nazora-theme .site-menu-main .sub-menu--item > a:hover .menu-item-text {
+  color: var(--nz-red) !important;
+}
+
+.nazora-theme .site-menu-main .sub-menu--item > a .menu-item-text::after {
+  background-color: var(--nz-red) !important;
+}
+
+.nazora-theme .site-menu-main .nav-link-item .ri-arrow-down-s-fill {
+  color: inherit;
+}
+
+.nz-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
+.nz-header-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 18px;
+  border-radius: 8px;
+  background: var(--nz-red);
+  color: #fff !important;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  border: 0;
+}
+
+.nz-header-btn:hover {
+  background: var(--nz-red-dark);
+  color: #fff !important;
+}
+
+/* Theme menu button — clean SVG hamburger */
+.nz-menu-btn,
+.nz-site-header .optech-header-barger.nz-menu-btn,
+.nz-site-header .mobile-menu-trigger.nz-menu-btn {
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px;
+  border-radius: 10px !important;
+  background: var(--nz-navy) !important;
+  border: 0 !important;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  position: relative;
+}
+
+.nz-menu-btn svg {
+  display: block;
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+
+.nz-menu-btn:hover {
+  background: var(--nz-red) !important;
+  color: #fff !important;
+}
+
+/* Kill old 3-line CSS hamburger */
+.nz-site-header .nz-menu-btn span,
+.nz-site-header .nz-menu-btn span:before,
+.nz-site-header .nz-menu-btn span:after,
+.nz-site-header .optech-header-barger span,
+.nz-site-header .optech-header-barger span:before,
+.nz-site-header .optech-header-barger span:after,
+.nz-site-header .mobile-menu-trigger.nz-menu-btn::before,
+.nz-site-header .mobile-menu-trigger.nz-menu-btn::after {
+  display: none !important;
+  content: none !important;
+  background: transparent !important;
+}
+
+.nz-header-cta {
+  display: none;
+}
+
+/* ——— Breadcrumbs (all inner pages) ——— */
+.nazora-theme .optech-breadcrumb {
+  background: linear-gradient(120deg, #07101c 0%, #0b1526 45%, #163056 100%) !important;
+  background-image: none !important;
+  background-color: #0b1526 !important;
+  padding-top: calc(var(--nz-header-h) + 36px) !important;
+  padding-bottom: 56px !important;
+  margin: 0;
+}
+
+.nazora-theme .optech-breadcrumb .post__title,
+.nazora-theme .optech-breadcrumb h1 {
+  color: #fff !important;
+}
+
+.nazora-theme .optech-breadcrumb .breadcrumbs a,
+.nazora-theme .optech-breadcrumb .breadcrumbs li {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.nazora-theme .optech-breadcrumb .breadcrumbs a:hover {
+  color: #fff !important;
+}
+
+/* ——— Buttons & accents sitewide ——— */
+.nazora-theme .optech-default-btn {
+  background: var(--nz-navy) !important;
+  border-color: var(--nz-navy) !important;
+}
+
+.nazora-theme .optech-default-btn:hover,
+.nazora-theme .optech-default-btn:focus {
+  background: var(--nz-red) !important;
+  border-color: var(--nz-red) !important;
+}
+
+.nazora-theme .optech-white-btn {
+  background: #fff !important;
+  color: var(--nz-navy) !important;
+  border-color: #fff !important;
+}
+
+.nazora-theme .nz-btn-red,
+.nazora-theme a.nz-btn-red {
+  background: var(--nz-red) !important;
+  border-color: var(--nz-red) !important;
+  color: #fff !important;
+}
+
+.nazora-theme .bg-light1 {
+  background-color: var(--nz-soft) !important;
+}
+
+.nazora-theme .optech-iconbox-wrap:hover,
+.nazora-theme .optech-icon-btn:hover {
+  color: var(--nz-red);
+}
+
+.nazora-theme .floating-call-btn {
+  background: var(--nz-navy) !important;
+}
+
+.floating-contact-actions {
+  left: 18px !important;
+  right: auto !important;
+  bottom: 22px !important;
+}
+
+/* ——— Unified form inputs (sitewide + footer) ——— */
+.nazora-theme .nz-form input,
+.nazora-theme .nz-form select,
+.nazora-theme .nz-form textarea,
+.nazora-theme .optech-main-field input,
+.nazora-theme .optech-main-field select,
+.nazora-theme .optech-main-field textarea,
+.nazora-theme .nz-news-form input,
+.nazora-theme .nz-consult input,
+.nazora-theme .nz-consult select,
+.nazora-theme .nz-consult textarea {
+  width: 100%;
+  border: 1px solid #dbe2ec !important;
+  border-radius: 10px !important;
+  padding: 14px 16px !important;
+  background: #f4f7fb !important;
+  color: var(--nz-ink) !important;
+  min-height: 52px;
+  box-shadow: none !important;
+  outline: none;
+}
+
+.nazora-theme .nz-form textarea,
+.nazora-theme .optech-main-field textarea,
+.nazora-theme .nz-consult textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.nazora-theme .nz-form input:focus,
+.nazora-theme .nz-form select:focus,
+.nazora-theme .nz-form textarea:focus,
+.nazora-theme .optech-main-field input:focus,
+.nazora-theme .optech-main-field select:focus,
+.nazora-theme .optech-main-field textarea:focus,
+.nazora-theme .nz-news-form input:focus {
+  border-color: var(--nz-navy) !important;
+  background: #fff !important;
+}
+
+.nazora-theme .nz-form-btn,
+.nazora-theme .nz-form button[type="submit"],
+.nazora-theme .nz-consult button[type="submit"],
+.nazora-theme button#optech-main-form-btn {
+  width: 100%;
+  border: 0 !important;
+  border-radius: 10px !important;
+  padding: 14px 18px !important;
+  min-height: 52px;
+  background: var(--nz-red) !important;
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nazora-theme .nz-form-card,
+.nazora-theme .optech-main-form.nz-form-card {
+  background: #fff;
+  border: 1px solid var(--nz-line);
+  border-radius: 18px;
+  padding: 28px 24px;
+  box-shadow: 0 16px 40px rgba(11, 21, 38, 0.06);
+  margin: 0 !important;
+}
+
+.nz-news-form {
+  display: flex;
+  max-width: 360px;
+  margin-bottom: 18px;
+  gap: 0;
+}
+
+.nz-news-form input {
+  flex: 1;
+  min-width: 0;
+  border-radius: 10px 0 0 10px !important;
+}
+
+.nz-news-form button {
+  border: 0;
+  border-radius: 0 10px 10px 0;
+  padding: 0 16px;
+  background: var(--nz-navy);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.nz-news-form button:hover {
+  background: var(--nz-red);
+}
+
+/* ——— Sidebar from LEFT + Nazora colors ——— */
+.nz-sidemenu .optech-sidemenu-column {
+  left: 0 !important;
+  right: auto !important;
+  margin-right: 0 !important;
+  margin-left: -440px !important;
+  background: var(--nz-navy-deep) !important;
+  color: rgba(255, 255, 255, 0.88) !important;
+  padding: 48px 36px !important;
+}
+
+.nz-sidemenu .optech-sidemenu-column.active {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.nz-sidemenu .optech-sidemenu-logo {
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin-bottom: 22px !important;
+  display: block !important;
+  box-shadow: none !important;
+}
+
+.nz-sidemenu .optech-sidemenu-logo img {
+  width: 150px !important;
+  height: auto !important;
+  background: transparent !important;
+  border: 0 !important;
+  /* Dark logo → light on navy sidebar (no white box) */
+  filter: brightness(0) invert(1);
+}
+
+.nz-sidemenu .optech-sidemenu-body > p {
+  color: rgba(255, 255, 255, 0.78) !important;
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.nz-sidemenu .nz-side-social ul {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0 0 28px;
+  padding: 0;
+}
+
+.nz-sidemenu .nz-side-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+}
+
+.nz-sidemenu .nz-side-social a:hover {
+  background: var(--nz-red) !important;
+  color: #fff !important;
+}
+
+.nz-sidemenu .nz-side-contact .optech-contact-info {
+  margin-bottom: 20px;
+}
+
+.nz-sidemenu .nz-side-contact h5,
+.nz-sidemenu .nz-side-contact p,
+.nz-sidemenu .nz-side-contact a {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.nz-sidemenu .nz-side-contact i {
+  color: var(--nz-red) !important;
+}
+
+.nz-sidemenu .optech-sidemenu-close {
+  left: auto;
+  right: 24px;
+  top: 24px;
+}
+
+.nz-sidemenu .optech-sidemenu-close i {
+  color: #fff !important;
+}
+
+/* Preloader: no logo border/box */
+.nz-preloader-inner {
+  background: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+
+.nz-preloader-logo {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  filter: none;
+}
+
+#nz-preloader {
+  background: #f4f6fa !important;
+}
+
+/* Addon illustration placeholder (matches SVG cards) */
+.nz-addon-illu {
+  width: 100%;
+  height: 140px;
+  border-radius: 14px;
+  background: linear-gradient(145deg, #e8eef8, #f5f8fc);
+  display: grid;
+  place-items: center;
+  color: var(--nz-navy);
+  font-size: 52px;
+}
+
+.nz-addon-card.is-active {
+  border-color: rgba(196, 30, 58, 0.45) !important;
+}
+
+.nz-addon-card img {
+  background: linear-gradient(145deg, #e8eef8, #f5f8fc);
+  border-radius: 14px;
+  padding: 8px;
+  object-fit: contain;
+  width: 100%;
+  height: 140px;
+}
+
+.nz-addon-link {
+  display: inline-flex;
+  margin-top: 12px;
+  color: var(--nz-red);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.nz-addon-link:hover {
+  color: var(--nz-navy);
+}
+
+/* Solid CTA for dark banners — no broken data-text overlay */
+.nz-solid-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 26px;
+  border-radius: 10px;
+  background: #fff !important;
+  color: var(--nz-navy) !important;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  border: 0;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.2);
+}
+
+.nz-solid-btn:hover {
+  background: var(--nz-red) !important;
+  color: #fff !important;
+}
+
+.nz-download-banner .nz-solid-btn {
+  margin-top: 8px;
+}
+
+/* Disable broken hover text effect on themed pages */
+.nazora-theme .optech-default-btn::before,
+.nazora-theme .optech-default-btn::after {
+  display: none !important;
+  content: none !important;
+}
+
+.nazora-theme .optech-default-btn .btn-wraper {
+  transform: none !important;
+  opacity: 1 !important;
+}
+
+/* Sidemenu logo plate — remove old white box */
+.optech-sidemenu-logo {
+  background: transparent !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+.optech-sidemenu-logo img {
+  width: 150px !important;
+  height: auto !important;
+  background: transparent !important;
+}
+.nz-footer.optech-footer-section,
+.optech-footer-section.nz-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  background: #f7f8fb !important;
+  color: var(--nz-muted);
+  overflow: visible !important;
+}
+
+.nz-footer::before,
+.nz-footer::after,
+.optech-footer-section.nz-footer::before,
+.optech-footer-section.nz-footer::after {
+  content: none !important;
+  display: none !important;
+}
+
+.nz-footer > .container {
+  position: relative;
+  z-index: 2;
+}
+
+.nz-footer-top {
+  padding: 72px 0 40px !important;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) minmax(240px, 1.2fr);
+  gap: 32px 28px;
+  align-items: start;
+}
+
+.nz-footer-col h5,
+.nz-footer-top h5 {
+  margin: 0 0 20px !important;
+  color: var(--nz-navy) !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1.3 !important;
+}
+
+.nz-footer-top ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nz-footer-top li + li {
+  margin-top: 11px;
+}
+
+.nz-footer-top a {
+  color: #5c6678 !important;
+  font-size: 0.95rem;
+}
+
+.nz-footer-top a:hover {
+  color: var(--nz-red) !important;
+}
+
+.nz-footer-news p {
+  margin: 0 0 16px;
+  color: var(--nz-ink) !important;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.nz-news-form {
+  display: flex;
+  max-width: 360px;
+  margin-bottom: 18px;
+}
+
+.nz-news-form input {
+  flex: 1;
+  min-width: 0;
+  border: 1px solid #d9e0ea;
+  border-right: 0;
+  border-radius: 8px 0 0 8px;
+  padding: 12px 14px;
+  background: #fff;
+}
+
+.nz-news-form button {
+  border: 0;
+  border-radius: 0 8px 8px 0;
+  padding: 0 16px;
+  background: var(--nz-navy);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+.nz-news-form button:hover {
+  background: var(--nz-red);
+}
+
+.nz-social {
+  display: flex;
+  gap: 10px;
+}
+
+.nz-social a {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 8px 18px rgba(11, 21, 38, 0.08);
+  display: grid;
+  place-items: center;
+  color: var(--nz-navy) !important;
+  font-size: 18px;
+}
+
+.nz-social a:hover {
+  color: var(--nz-red) !important;
+}
+
+.nz-footer-bottom {
+  border-top: 1px solid #e4e9f0;
+  padding: 24px 0 28px !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: transparent !important;
+}
+
+.nz-footer-bottom .brand img {
+  width: 118px;
+  height: auto;
+  display: block;
+  background: transparent;
+}
+
+.nz-footer-bottom p {
+  margin: 0;
+  color: #7a8494 !important;
+  font-size: 0.88rem;
+  text-align: center;
+  flex: 1 1 auto;
+}
+
+.nz-footer-bottom .legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: #7a8494;
+  font-size: 0.88rem;
+}
+
+.nz-footer-bottom .legal a {
+  color: #7a8494 !important;
+}
+
+.nz-footer-bottom .legal a:hover {
+  color: var(--nz-red) !important;
+}
+
+/* Sidemenu logo plate */
+.optech-sidemenu-logo {
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px 14px;
+  display: inline-block;
+}
+
+.optech-sidemenu-logo img {
+  width: 150px !important;
+  height: auto !important;
+  background: transparent !important;
+}
+
+@media (max-width: 1199px) {
+  .nz-footer-top {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .nz-footer-news {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 991px) {
+  .nz-header-top {
+    display: none !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .nz-footer-top {
+    grid-template-columns: 1fr;
+    padding: 48px 0 28px !important;
+  }
+
+  .nz-footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nz-footer-bottom .legal {
+    justify-content: center;
+  }
+
+  .nz-news-form {
+    flex-direction: column;
+    max-width: none;
+  }
+
+  .nz-news-form input,
+  .nz-news-form button {
+    border-radius: 8px;
+    border: 1px solid var(--nz-line);
+    min-height: 48px;
+  }
+
+  .floating-contact-actions {
+    left: 12px !important;
+    right: auto !important;
+    bottom: 12px !important;
+  }
+
+  .floating-contact-btn span {
+    display: none;
+  }
+
+  .floating-contact-btn {
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
+  }
+}
+
+/* Careers + Team pages */
+.nz-job-card,
+.nz-team-card {
+  background: #fff;
+  border: 1px solid var(--nz-line);
+  border-radius: 16px;
+  padding: 24px 20px;
+  height: 100%;
+  box-shadow: 0 12px 28px rgba(11, 21, 38, 0.05);
+}
+
+.nz-job-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(196, 30, 58, 0.1);
+  color: var(--nz-red);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.nz-job-card h3 {
+  margin: 0 0 10px;
+  color: var(--nz-navy);
+  font-size: 1.2rem;
+}
+
+.nz-job-card p {
+  color: var(--nz-muted);
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.nz-job-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px;
+  color: var(--nz-ink);
+  font-size: 0.92rem;
+}
+
+.nz-job-card ul li + li { margin-top: 6px; }
+
+.nz-team-card {
+  text-align: center;
+  padding: 20px 16px 24px;
+}
+
+.nz-team-card img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-bottom: 14px;
+}
+
+.nz-team-card h4 {
+  margin: 0 0 4px;
+  color: var(--nz-navy);
+  font-size: 1.05rem;
+}
+
+.nz-team-card span {
+  color: var(--nz-muted);
+  font-size: 0.9rem;
+}
+
+.nz-page-cta {
+  background: var(--nz-soft);
+  border-radius: 18px;
+  padding: 36px 24px;
+}
+
+.nz-page-cta h3 {
+  color: var(--nz-navy);
+  margin-bottom: 8px;
+}
+
+.nz-page-cta p {
+  color: var(--nz-muted);
+  margin-bottom: 18px;
+}
+
+.nz-page-cta .nz-header-btn {
+  display: inline-flex;
+}
+
+/* Service page cards */
+.nz-svc-card {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 18px;
+  align-items: start;
+  background: #fff;
+  border: 1px solid var(--nz-line);
+  border-radius: 16px;
+  padding: 24px 22px;
+  height: 100%;
+  box-shadow: 0 12px 28px rgba(11, 21, 38, 0.05);
+}
+
+.nz-svc-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(11, 21, 38, 0.06);
+  color: var(--nz-navy);
+  display: grid;
+  place-items: center;
+  font-size: 26px;
+  flex-shrink: 0;
+}
+
+.nz-svc-card h5 {
+  margin: 0 0 8px;
+  color: var(--nz-navy);
+  font-size: 1.15rem;
+}
+
+.nz-svc-card p {
+  margin: 0 0 12px;
+  color: var(--nz-muted);
+  line-height: 1.6;
+}
+
+.nz-process-card {
+  background: #fff;
+  border: 1px solid var(--nz-line);
+  border-radius: 16px;
+  padding: 28px 22px;
+  height: 100%;
+  text-align: left;
+  box-shadow: 0 12px 28px rgba(11, 21, 38, 0.05);
+}
+
+.nz-process-card .nz-svc-icon {
+  margin-bottom: 16px;
+}
+
+.nz-process-card span {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--nz-red);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.nz-process-card h4 {
+  margin: 0 0 10px;
+  color: var(--nz-navy);
+}
+
+.nz-process-card p {
+  margin: 0;
+  color: var(--nz-muted);
+  line-height: 1.6;
+}

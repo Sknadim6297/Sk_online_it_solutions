@@ -12,7 +12,7 @@ function blog_format_date(?string $date): string
 function blog_render_page_breadcrumb(string $title, array $items): void
 {
     ?>
-    <div class="optech-breadcrumb" style="background-color: #046eb5;">
+    <div class="optech-breadcrumb nz-breadcrumb">
       <div class="container">
         <h1 class="post__title"><?php echo blog_escape($title); ?></h1>
         <nav class="breadcrumbs">

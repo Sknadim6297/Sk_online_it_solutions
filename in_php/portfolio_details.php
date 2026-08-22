@@ -30,7 +30,7 @@ $project = [
 ];
 ?>
 
-<div class="optech-breadcrumb" style="background-image: url(assets/images/breadcrumb/breadcrumb.png)">
+<div class="optech-breadcrumb nz-breadcrumb">
     <div class="container">
       <h1 class="post__title"><?php echo $project['breadcrumb']; ?></h1>
       <nav class="breadcrumbs">

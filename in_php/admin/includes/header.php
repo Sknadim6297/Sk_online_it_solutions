@@ -2,12 +2,13 @@
 $flashMessage = blog_get_flash();
 $currentUser = blog_current_user();
 $pageTitle = $pageTitle ?? 'Admin Panel';
-$pageSubtitle = $pageSubtitle ?? 'Manage your blog content, SEO, and media.';
+$pageSubtitle = $pageSubtitle ?? 'Manage content, careers, SEO, and media.';
 $activeMenu = $activeMenu ?? '';
 
 $navItems = [
     ['id' => 'dashboard', 'label' => 'Dashboard', 'href' => 'dashboard.php', 'icon' => 'ri-dashboard-3-line'],
     ['id' => 'posts', 'label' => 'Blog Posts', 'href' => 'posts.php', 'icon' => 'ri-article-line'],
+    ['id' => 'careers', 'label' => 'Careers', 'href' => 'careers.php', 'icon' => 'ri-briefcase-4-line'],
     ['id' => 'categories', 'label' => 'Categories', 'href' => 'categories.php', 'icon' => 'ri-folder-3-line'],
     ['id' => 'tags', 'label' => 'Tags', 'href' => 'tags.php', 'icon' => 'ri-price-tag-3-line'],
     ['id' => 'settings', 'label' => 'SEO Settings', 'href' => 'settings.php', 'icon' => 'ri-seo-line'],
@@ -25,9 +26,9 @@ $navItems = [
     <aside class="admin-sidebar" id="adminSidebar">
       <div class="admin-sidebar-inner">
         <a href="dashboard.php" class="admin-brand">
-          <img src="../assets/images/logo/header_logo-removebg.png" alt="<?php echo blog_escape(site_company_name()); ?>" class="admin-brand-logo">
+          <img src="../assets/images/logo/nazora-logo.png" alt="<?php echo blog_escape(site_company_name()); ?>" class="admin-brand-logo">
           <div class="admin-brand-text">
-            <strong><?php echo blog_escape(site_company_name()); ?></strong>
+            <strong>Nazora TECH</strong>
             <span>Admin Panel</span>
           </div>
         </a>
@@ -52,7 +53,11 @@ $navItems = [
               <span class="admin-nav-icon"><i class="ri-add-circle-line"></i></span>
               <span class="admin-nav-text">New Blog Post</span>
             </a>
-            <a href="<?php echo blog_escape(blog_url('blog.php')); ?>" class="admin-nav-link" target="_blank" rel="noopener">
+            <a href="career-form.php" class="admin-nav-link">
+              <span class="admin-nav-icon"><i class="ri-briefcase-line"></i></span>
+              <span class="admin-nav-text">New Career Opening</span>
+            </a>
+            <a href="<?php echo blog_escape(blog_url('index.php')); ?>" class="admin-nav-link" target="_blank" rel="noopener">
               <span class="admin-nav-icon"><i class="ri-external-link-line"></i></span>
               <span class="admin-nav-text">View Website</span>
             </a>
