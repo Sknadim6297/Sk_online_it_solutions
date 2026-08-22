@@ -7,7 +7,7 @@ $post = $slug !== '' ? blog_get_post_by_slug($slug, true) : null;
 
 if (!$post) {
     http_response_code(404);
-    $pageTitle = 'Article Not Found | Sk Online Service and IT Solution';
+    $pageTitle = 'Article Not Found | ' . site_company_name();
     $pageDescription = 'The requested blog article could not be found.';
     $loadBlogAssets = true;
     include 'header.php';
@@ -23,7 +23,7 @@ if (!$post) {
     exit;
 }
 
-$pageTitle = ($post['seo_title'] ?: $post['title']) . ' | Sk Online Service and IT Solution';
+$pageTitle = ($post['seo_title'] ?: $post['title']) . ' | ' . site_company_name();
 $pageDescription = $post['meta_description'] ?: $post['excerpt'];
 $pageKeywords = $post['meta_keywords'] ?: 'blog, IT services, web development, Kolkata';
 $pageCanonical = $post['canonical_url'] ?: blog_post_url($post['slug']);
@@ -37,8 +37,8 @@ $pageSchemaMarkup = $post['schema_markup'] ?: json_encode([
     'datePublished' => $post['published_at'] ?: $post['created_at'],
     'dateModified' => $post['updated_at'],
     'mainEntityOfPage' => $pageCanonical,
-    'author' => ['@type' => 'Organization', 'name' => 'Sk Online Service and IT Solution'],
-    'publisher' => ['@type' => 'Organization', 'name' => 'Sk Online Service and IT Solution'],
+    'author' => ['@type' => 'Organization', 'name' => site_company_name()],
+    'publisher' => ['@type' => 'Organization', 'name' => site_company_name()],
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 
 $relatedPosts = blog_get_related_posts((int) $post['id'], (int) ($post['category_id'] ?? 0), 3);
@@ -64,7 +64,7 @@ blog_render_page_breadcrumb($breadcrumbHeading, [
             <div class="snf-blog-article__meta">
               <span><?php echo blog_escape($post['category_name'] ?? 'General'); ?></span>
               <span><?php echo blog_escape(blog_format_date($post['published_at'] ?? $post['created_at'])); ?></span>
-              <span><?php echo blog_escape($post['author_name'] ?? 'Sk Online Team'); ?></span>
+              <span><?php echo blog_escape($post['author_name'] ?? SITE_COMPANY_TEAM); ?></span>
             </div>
             <h1><?php echo blog_escape($post['title']); ?></h1>
             <p class="lead"><?php echo blog_escape($post['excerpt']); ?></p>

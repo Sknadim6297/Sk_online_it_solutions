@@ -36,7 +36,7 @@
     /*--------------------------------------------------------------
     optech PRELOADER JS INIT
     --------------------------------------------------------------*/
-    $(".optech-preloader-wrap").fadeOut(500);
+    $(".optech-preloader-wrap, #nz-preloader").addClass("is-done").fadeOut(500);
 
     /*--------------------------------------------------------------
     optech HEADER SEARCH JS INIT

@@ -1,7 +1,7 @@
 /*Header Css StaRT*/
 :root {
-    --color-primary: #046eb5;
-    --color-accent-orange: #ff8324;
+    --color-primary: #0b1526;
+    --color-accent-orange: #c41e3a;
     --color-accent-teal: #24e3d3;
     --color-accent-yellow: #ffd334;
 }
@@ -1388,7 +1388,8 @@ a.log-in-btn:hover:after {
 
 .floating-contact-actions {
     position: fixed;
-    left: 18px;
+    left: auto;
+    right: 18px;
     bottom: 18px;
     display: flex;
     flex-direction: column;
@@ -1487,7 +1488,8 @@ a.log-in-btn:hover:after {
     }
 
     .floating-contact-actions {
-        left: 14px;
+        left: auto;
+        right: 14px;
         bottom: 14px;
     }
 }

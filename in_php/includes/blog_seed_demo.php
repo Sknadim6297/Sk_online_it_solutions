@@ -35,7 +35,7 @@ function blog_seed_placeholder_image(string $slug, int $variant = 0): ?string
 
     $white = imagecolorallocate($image, 255, 255, 255);
     $label = substr(str_replace('-', ' ', $slug), 0, 48);
-    imagestring($image, 5, 36, 36, 'SNF Studio Blog', $white);
+    imagestring($image, 5, 36, 36, SITE_COMPANY_BLOG, $white);
     imagestring($image, 4, 36, 68, $label, $white);
 
     imagejpeg($image, $targetPath, 86);
@@ -122,7 +122,7 @@ function blog_seed_demo_posts(): array
         $categoryLabel = ucwords(str_replace('-', ' ', $post['category']));
         $excerpt = 'Explore practical guidance on ' . strtolower($post['title']) . ' with actionable steps for modern businesses.';
         $seoTitle = mb_substr($post['title'], 0, 60);
-        $metaDescription = mb_substr($excerpt . ' Learn frameworks, metrics, and execution tips from SNF Studio.', 0, 160);
+        $metaDescription = mb_substr($excerpt . ' Learn frameworks, metrics, and execution tips from ' . SITE_COMPANY_NAME . '.', 0, 160);
         $canonical = rtrim($baseUrl, '/') . '/blog/' . $slug;
 
         $enriched[] = array_merge($post, [
@@ -141,8 +141,8 @@ function blog_seed_demo_posts(): array
                 '@type' => 'BlogPosting',
                 'headline' => $post['title'],
                 'description' => $metaDescription,
-                'author' => ['@type' => 'Organization', 'name' => 'SNF Studio'],
-                'publisher' => ['@type' => 'Organization', 'name' => 'SNF Studio'],
+                'author' => ['@type' => 'Organization', 'name' => SITE_COMPANY_NAME],
+                'publisher' => ['@type' => 'Organization', 'name' => SITE_COMPANY_NAME],
             ], JSON_UNESCAPED_SLASHES),
             'featured_image_alt' => $post['title'] . ' featured image',
             'days_ago' => 3 + ($index * 2),

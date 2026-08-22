@@ -34,7 +34,7 @@
 				<div class="col-lg-6 d-flex align-items-center">
 					<div class="optech-default-content ml40">
 						<h2>Your Complete IT & Service Solution Partner</h2>
-					<p>Sk Online Service and IT Solution is a comprehensive service provider based in Kestopur, Kolkata, India. We offer a unique blend of professional IT solutions for global clients and essential local services for the community. From cutting-edge web development to government documentation and cyber cafe services, we are your one-stop solution.</p>
+					<p><?php echo htmlspecialchars(site_company_name(), ENT_QUOTES, 'UTF-8'); ?> is a comprehensive service provider based in Kestopur, Kolkata, India. We offer a unique blend of professional IT solutions for global clients and essential local services for the community. From cutting-edge web development to government documentation and cyber cafe services, we are your one-stop solution.</p>
 						<p>Founded with a vision to bridge technology and practical everyday needs, we've successfully served over 150+ clients ranging from startups seeking digital transformation to individuals needing government documentation assistance. Our diverse team ensures quality service delivery across all categories, building trust and long-term relationships.</p>
 						<div class="optech-extra-mt">
 							<a class='optech-default-btn' data-text='Get In Touch' href='contact'><span class="btn-wraper">Get In Touch</span></a>

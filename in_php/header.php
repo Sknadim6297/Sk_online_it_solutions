@@ -1,9 +1,11 @@
 <?php
+require_once __DIR__ . '/includes/site_config.php';
+$company = site_company_name();
 $currentPage = basename($_SERVER['PHP_SELF']);
 $seoMap = [
   'index.php' => [
-    'title' => 'Website, App & Software Development Company in Kolkata | Sk Online Service and IT Solution',
-    'description' => 'Sk Online Service and IT Solution builds websites, mobile apps, software platforms, and AI automation solutions for businesses in Kolkata and beyond.',
+    'title' => 'Website, App & Software Development Company in Kolkata | ' . $company,
+    'description' => $company . ' builds websites, mobile apps, software platforms, and AI automation solutions for businesses in Kolkata and beyond.',
     'keywords' => 'website development Kolkata, app development Kolkata, software development company Kolkata, AI automation services, IT solutions Kolkata'
   ],
   'service.php' => [
@@ -12,25 +14,25 @@ $seoMap = [
     'keywords' => 'IT services Kolkata, website development, app development, software solutions, digital services'
   ],
   'contact.php' => [
-    'title' => 'Contact Sk Online Service and IT Solution | Kolkata IT Company',
+    'title' => 'Contact ' . $company . ' | Kolkata IT Company',
     'description' => 'Contact our Kolkata-based team for website development, mobile apps, software solutions, and AI automation projects.',
     'keywords' => 'contact Kolkata IT company, website quote Kolkata, app development contact'
   ],
   'portfolio.php' => [
-    'title' => 'Portfolio | Sk Online Service and IT Solution',
-    'description' => 'View selected website, app, and branding projects completed by Sk Online Service and IT Solution.',
+    'title' => 'Portfolio | ' . $company,
+    'description' => 'View selected website, app, and branding projects completed by ' . $company . '.',
     'keywords' => 'portfolio website development, app portfolio, software project examples'
   ],
   'blog.php' => [
-    'title' => 'Blog | Sk Online Service and IT Solution',
+    'title' => 'Blog | ' . $company,
     'description' => 'Practical articles on web development, SEO, mobile apps, and digital business growth.',
     'keywords' => 'IT blog Kolkata, SEO articles, web development tips'
   ],
 ];
 
 $seoData = $seoMap[$currentPage] ?? [
-  'title' => 'Sk Online Service and IT Solution',
-  'description' => 'Sk Online Service and IT Solution provides website, app, software, and digital services from Kolkata.',
+  'title' => $company,
+  'description' => $company . ' provides website, app, software, and digital services from Kolkata.',
   'keywords' => 'website development, app development, software development, Kolkata IT services'
 ];
 
@@ -75,8 +77,8 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
   <meta name="twitter:image" content="<?php echo htmlspecialchars($pageOgImage, ENT_QUOTES, 'UTF-8'); ?>">
   <?php endif; ?>
 
-  <link rel="shortcut icon" href="assets/images/logo/header_logo-removebg.png" type="image/x-icon">
-  <link rel="icon" href="assets/images/logo/header_logo-removebg.png" type="image/x-icon">
+  <link rel="shortcut icon" href="assets/images/logo/nazora-logo.png" type="image/png">
+  <link rel="icon" href="assets/images/logo/nazora-logo.png" type="image/png">
   <!--- End favicon-->
 
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&amp;display=swap" rel="stylesheet">
@@ -94,6 +96,7 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
 
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/app.min.css">
+  <link rel="stylesheet" href="assets/css/nazora-home.css">
   <?php if (!empty($loadBlogAssets)) : ?>
   <link rel="stylesheet" href="assets/css/blog.css">
   <?php endif; ?>
@@ -109,7 +112,7 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
   {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "Sk Online Service and IT Solution",
+    "name": "<?php echo htmlspecialchars($company, ENT_QUOTES, 'UTF-8'); ?>",
     "description": "Website, app, software, and AI automation company based in Kolkata.",
     "email": "skonlineitsolution@gmail.com",
     "telephone": "+91-6297616918",
@@ -125,16 +128,35 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
   <?php endif; ?>
 </head>
 
-<body>
+<body<?php echo (!empty($loadNazoraHome) || $currentPage === 'index.php') ? ' class="nazora-home"' : ''; ?>>
 
-  <div class="optech-preloader-wrap">
-    <div class="optech-preloader">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
+  <div class="optech-preloader-wrap nz-preloader" id="nz-preloader" aria-hidden="true">
+    <div class="nz-preloader-inner">
+      <img src="assets/images/logo/nazora-logo.png" alt="Nazora TECH" class="nz-preloader-logo">
+      <div class="nz-preloader-dots" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </div>
     </div>
   </div>
+  <script>
+    (function () {
+      var el = document.getElementById('nz-preloader');
+      if (!el) return;
+      var hide = function () {
+        el.classList.add('is-done');
+        window.setTimeout(function () {
+          el.style.display = 'none';
+          el.setAttribute('aria-hidden', 'true');
+        }, 420);
+      };
+      if (document.readyState === 'complete') {
+        hide();
+      } else {
+        window.addEventListener('load', hide);
+        window.setTimeout(hide, 1800);
+      }
+    })();
+  </script>
   <!-- End preloader -->
 
   <!-- progress circle -->
@@ -152,16 +174,16 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
 
 
 
-  <header class="site-header optech-header-section site-header--menu-right" id="sticky-menu">
-    <div class="optech-header-top dark-bg">
+  <header class="site-header optech-header-section site-header--menu-right nz-site-header" id="sticky-menu">
+    <div class="optech-header-top dark-bg nz-header-top">
       <div class="container">
-        <div class="optech-header-info-wrap">
-          <div class="optech-header-info ">
+        <div class="optech-header-info-wrap nz-header-info">
+          <div class="optech-header-info">
             <ul>
               <li><i class="ri-map-pin-2-fill"></i>Kestopur, Kolkata, India</li>
             </ul>
           </div>
-          <div class="optech-header-info ">
+          <div class="optech-header-info">
             <ul>
               <li><a href="tel:6297616918"><i class="ri-phone-fill"></i>+91-6297616918</a></li>
               <li><a href="mailto:skonlineitsolution@gmail.com"><i class="ri-mail-fill"></i>skonlineitsolution@gmail.com</a></li>
@@ -170,14 +192,14 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
         </div>
       </div>
     </div>
-    <div class="optech-header-bottom p-0">
+    <div class="optech-header-bottom p-0 nz-header-bottom">
       <div class="container">
-        <div class="header-bottom-border border-color-light">
-          <nav class="navbar site-navbar">
+        <div class="header-bottom-border border-color-light nz-header-bar">
+          <nav class="navbar site-navbar nz-navbar">
             <!-- Brand Logo-->
             <div class="brand-logo">
               <a href='index'>
-                <img src="assets/images/logo/header_logo-removebg.png" alt="Sk Online Service and IT Solution" class="light-version-logo" style="width: 114px !important; height: auto !important; max-height: 190px !important;">
+                <img src="assets/images/logo/nazora-logo.png" alt="<?php echo htmlspecialchars($company, ENT_QUOTES, 'UTF-8'); ?>" class="light-version-logo">
               </a>
             </div>
             <div class="menu-block-wrapper">
@@ -191,7 +213,7 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
                   <div class="mobile-menu-close">&times;</div>
                 </div>
                 <ul class="site-menu-main light-color">
-                  <li class="nav-item nav-item-has-children">
+                  <li class="nav-item">
                     <a href="index" class="nav-link-item">Home</a>
                   </li>
                   <li class="nav-item nav-item-has-children">
@@ -214,10 +236,10 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
                       </li>
                     </ul>
                   </li>
-                  <li class="nav-item nav-item-has-children">
+                  <li class="nav-item">
                     <a href="portfolio" class="nav-link-item">Portfolio</a>
                   </li>
-                  <li class="nav-item nav-item-has-children">
+                  <li class="nav-item">
                     <a href="blog" class="nav-link-item">Blog</a>
                   </li>
                   <li class="nav-item">
@@ -226,11 +248,11 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
                 </ul>
               </nav>
             </div>
+            <div class="nz-header-cta d-none d-lg-inline-flex">
+              <a class="nz-header-btn" href="contact">Get a Quote</a>
+            </div>
             <div class="header-btn header-btn-l1 ms-auto d-none d-xs-inline-flex">
               <div class="optech-header-icon">
-                <div class="optech-header-search light-color">
-                  <i class="ri-search-line"></i>
-                </div>
                 <div class="optech-header-barger light-color">
                   <span></span>
                 </div>
@@ -269,9 +291,9 @@ $pageSchemaMarkup = $pageSchemaMarkup ?? null;
     <div class="optech-sidemenu-column">
       <div class="optech-sidemenu-body">
         <div class="optech-sidemenu-logo">
-          <a href="#"><img src="assets/images/logo/header_logo.png" alt="Sk Online Service and IT Solution" style="width: 150px !important; height: auto !important;"></a>
+          <a href="index"><img src="assets/images/logo/nazora-logo.png" alt="<?php echo htmlspecialchars($company, ENT_QUOTES, 'UTF-8'); ?>" style="width: 160px !important; height: auto !important;"></a>
         </div>
-        <p>Sk Online Service and IT Solution helps businesses build websites, mobile apps, and software products with practical support, clear delivery, and a modern digital approach.</p>
+        <p><?php echo htmlspecialchars($company, ENT_QUOTES, 'UTF-8'); ?> helps businesses build websites, mobile apps, and software products with practical support, clear delivery, and a modern digital approach.</p>
         <div class="optech-social-icon-box style-two">
           <ul>
             <li>

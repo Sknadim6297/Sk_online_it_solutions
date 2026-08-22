@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/includes/site_config.php';
 // Contact form email handler
 header('Content-Type: application/json');
 
@@ -95,8 +96,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Email configuration
     $to = 'skonlineitsolution@gmail.com'; // Replace with your email
     $subject = !empty($service)
-        ? 'New ' . $service . ' Inquiry from Sk Online Service and IT Solution Website'
-        : 'New Contact Form Submission from Sk Online Service and IT Solution Website';
+        ? 'New ' . $service . ' Inquiry from ' . site_company_name() . ' Website'
+        : 'New Contact Form Submission from ' . site_company_name() . ' Website';
     
     // Email headers
     $headers = "MIME-Version: 1.0\r\n";
@@ -144,7 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
             <div class='footer'>
-                <p>This email was sent from Sk Online Service and IT Solution website contact form.</p>
+                <p>This email was sent from <?php echo htmlspecialchars(site_company_name(), ENT_QUOTES, 'UTF-8'); ?> website contact form.</p>
             </div>
         </div>
     </body>
@@ -157,7 +158,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Regardless of mail result, show success since we have file backup
     if ($mail_sent || true) {
         // Send confirmation email to user
-        $user_subject = 'We received your message - Sk Online Service and IT Solution';
+        $user_subject = 'We received your message - ' . site_company_name();
         $user_headers = "From: noreply@snfteam.com\r\n";
         $user_headers .= "Content-Type: text/html; charset=UTF-8\r\n";
         
@@ -175,7 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <body>
             <div class='container'>
                 <div class='header'>
-                    <h2>Thank You for Contacting Sk Online Service and IT Solution</h2>
+                    <h2>Thank You for Contacting <?php echo htmlspecialchars(site_company_name(), ENT_QUOTES, 'UTF-8'); ?></h2>
                 </div>
                 <div class='content'>
                     <p>Dear " . $name . ",</p>
@@ -184,7 +185,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     " . (!empty($service) ? "<p><strong>Service Requested:</strong> " . $service . "</p>" : "") . "
                     <p><strong>Your Message:</strong></p>
                     <p>" . nl2br($message) . "</p>
-                    <p>Best regards,<br><strong>Sk Online Service and IT Solution</strong></p>
+                    <p>Best regards,<br><strong><?php echo htmlspecialchars(site_company_name(), ENT_QUOTES, 'UTF-8'); ?></strong></p>
                 </div>
             </div>
         </body>

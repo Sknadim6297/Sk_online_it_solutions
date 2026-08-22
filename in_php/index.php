@@ -3,258 +3,421 @@ require_once __DIR__ . '/includes/blog_app.php';
 require_once __DIR__ . '/includes/blog_frontend.php';
 $latestBlogPosts = blog_get_recent_posts(3);
 $loadBlogAssets = true;
+$loadNazoraHome = true;
 include 'header.php';
 ?>
 
-  <div class="optech-hero-section5 hero-premium" style="background-image: url(assets/images/hero/hero-bg2.png)">
-    <div class="hero-premium-overlay"></div>
-    <div class="container hero-premium-inner">
-      <div class="row align-items-center g-4">
-        <div class="col-xl-7 col-lg-7 d-flex align-items-center">
-          <div class="optech-hero-content white-color sm hero-home-copy">
-            <span class="hero-eyebrow">Global web, app, software and AI automation partner</span>
-            <h1>Website, App & Software Development Company</h1>
-            <p>We help businesses grow with custom websites, mobile apps, software solutions, AI automation, and digital services - all under one roof.</p>
-            <div class="hero-cta-row" data-aos="fade-up" data-aos-duration="600">
-              <a class='optech-default-btn optech-white-btn' data-text='Explore Our Services' href='service'><span class="btn-wraper">Explore Our Services</span></a>
-              <a class='optech-default-btn hero-whatsapp-btn' data-text='WhatsApp Us' href='https://wa.me/916297616918?text=Hi%20Sk%20Online%20Service%20and%20IT%20Solution,%20I%20need%20a%20quote.' target="_blank" rel="noopener"><span class="btn-wraper">WhatsApp Us</span></a>
-            </div>
-            <ul class="hero-trust-badges" data-aos="fade-up" data-aos-duration="700">
-              <li><i class="ri-check-line"></i> 50+ Services</li>
-              <li><i class="ri-check-line"></i> Fast Delivery</li>
-              <li><i class="ri-check-line"></i> Affordable Pricing</li>
-              <li><i class="ri-check-line"></i> Global Delivery Team</li>
-            </ul>
-            <div class="hero-stats-grid" data-aos="fade-up" data-aos-duration="800">
-              <div class="hero-stat-card">
-                <strong>100+</strong>
-                <span>Projects</span>
-              </div>
-              <div class="hero-stat-card">
-                <strong>50+</strong>
-                <span>Services</span>
-              </div>
-              <div class="hero-stat-card">
-                <strong>24/7</strong>
-                <span>Support</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-xl-5 col-lg-5" data-aos="fade-up" data-aos-duration="800">
-          <div class="optech-hero-form hero-premium-form">
-            <h4>Get Free Consultation</h4>
-            <p>Tell us what you want to build</p>
-            <form action="send_email.php" method="POST">
-              <div class="optech-main-field">
-                <input type="text" name="name" placeholder="Your name" required>
-              </div>
-              <div class="optech-main-field">
-                <input type="email" name="email" placeholder="Email address" required>
-              </div>
-              <div class="optech-main-field">
-                <input type="tel" name="phone" placeholder="Phone number" required>
-              </div>
-              <div class="optech-main-field">
-                <select name="service" required>
-                  <option value="" selected disabled>Select service</option>
-                  <option value="Website Development">Website Development</option>
-                  <option value="App Development">App Development</option>
-                  <option value="Software Development">Software Development</option>
-                  <option value="SEO">SEO</option>
-                  <option value="Documentation Service">Documentation Service</option>
-                </select>
-              </div>
-              <div class="optech-main-field">
-                <textarea name="message" placeholder="Write your message" required></textarea>
-              </div>
-              <button id="optech-main-form-btn" type="submit" data-text="Send Message"><span class="btn-wraper">Send Message</span></button>
-            </form>
-          </div>
+  <section class="nz-hero">
+    <div class="container">
+      <div class="nz-hero-inner">
+        <h1>Fueled by Data, Driven by Nazora: Digital Transformation</h1>
+        <p>Custom websites, mobile apps, software platforms, and AI automation — built to grow your business with clarity and speed.</p>
+        <div class="nz-hero-actions">
+          <a class="optech-default-btn optech-white-btn" data-text="Discover More" href="service"><span class="btn-wraper">Discover More</span></a>
+          <a class="optech-default-btn nz-btn-red" data-text="Free Consultation" href="contact"><span class="btn-wraper">Free Consultation</span></a>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End section -->
+  </section>
 
-  <div class="section optech-section-padding2 bg-light1">
+  <section class="nz-trust">
     <div class="container">
-      <div class="optech-section-title center">
-        <h2>Core Digital Services For Growth-Focused Businesses</h2>
-        <p class="text-muted">We keep the homepage focused on the work that drives serious leads.</p>
-      </div>
-      <div class="row">
-        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="600">
-          <div class="optech-iconbox-wrap style-two">
-            <div class="optech-iconbox-icon">
-              <img src="assets/images/iconbox/icon7.svg" alt="Website Development">
-            </div>
-            <div class="optech-iconbox-data">
-              <h5>Website Development</h5>
-              <p>SEO-friendly business websites, landing pages, and corporate sites designed to convert visitors into enquiries.</p>
-              <a class='optech-icon-btn' href='service_details'><i class="icon-show ri-arrow-right-line"></i> <span>View Details</span> <i class="icon-hide ri-arrow-right-line"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800">
-          <div class="optech-iconbox-wrap style-two">
-            <div class="optech-iconbox-icon">
-              <img src="assets/images/iconbox/icon6.svg" alt="App Development">
-            </div>
-            <div class="optech-iconbox-data">
-              <h5>App Development</h5>
-              <p>Android and iOS app development with smooth user journeys, secure architecture, and scalable backends.</p>
-              <a class='optech-icon-btn' href='app_development_details'><i class="icon-show ri-arrow-right-line"></i> <span>View Details</span> <i class="icon-hide ri-arrow-right-line"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="600">
-          <div class="optech-iconbox-wrap style-two">
-            <div class="optech-iconbox-icon">
-              <img src="assets/images/iconbox/icon8.svg" alt="Software Solutions">
-            </div>
-            <div class="optech-iconbox-data">
-              <h5>Software Solutions</h5>
-              <p>Custom CRM, ERP, dashboard, and internal workflow solutions built around how your business actually works.</p>
-              <a class='optech-icon-btn' href='software_development_details'><i class="icon-show ri-arrow-right-line"></i> <span>View Details</span> <i class="icon-hide ri-arrow-right-line"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="800">
-          <div class="optech-iconbox-wrap style-two">
-            <div class="optech-iconbox-icon">
-              <img src="assets/images/iconbox/icon9.svg" alt="AI Automation">
-            </div>
-            <div class="optech-iconbox-data">
-              <h5>AI Automation</h5>
-              <p>Lead handling, content support, chatbot workflows, and process automation to save time and improve response speed.</p>
-              <a class='optech-icon-btn' href='contact'><i class="icon-show ri-arrow-right-line"></i> <span>Discuss Automation</span> <i class="icon-hide ri-arrow-right-line"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row mt-4">
-        <div class="col-12 text-center">
-          <p class="service-note">Need documentation, cyber cafe, or government-related help? Visit our full service catalog for the complete list.</p>
-          <a class='optech-default-btn' href='service' data-text='View Complete Service Catalog'><span class="btn-wraper">View Complete Service Catalog</span></a>
+      <div class="nz-trust-card">
+        <h3>Trusted by growing brands and organizations of all sizes</h3>
+        <div class="nz-trust-logos">
+          <img src="assets/images/brand/brand1.svg" alt="Partner brand">
+          <img src="assets/images/brand/brand2.svg" alt="Partner brand">
+          <img src="assets/images/brand/brand3.svg" alt="Partner brand">
+          <img src="assets/images/brand/brand4.svg" alt="Partner brand">
+          <img src="assets/images/brand/brand5.svg" alt="Partner brand">
+          <img src="assets/images/brand/brand01.svg" alt="Partner brand">
+          <img src="assets/images/brand/brand02.svg" alt="Partner brand">
+          <img src="assets/images/brand/brand03.svg" alt="Partner brand">
         </div>
       </div>
     </div>
-  </div>
-  <!-- End section -->
+  </section>
 
-  <div class="section large-padding-tb4 overflow-hidden bg-light1">
+  <section class="nz-section nz-tools">
     <div class="container">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-6">
-          <div class="optech-thumb extra-mr">
-            <img data-aos="fade-up" data-aos-duration="600" src="assets/images/v2/thumb1.png" alt="Website and software delivery team">
-            <div class="optech-thumb-position" data-aos="fade-up" data-aos-duration="800">
-              <img src="assets/images/v2/thumb2.png" alt="Project collaboration and support">
-            </div>
-            <div class="optech-shape1">
-              <img src="assets/images/shape/shape1.svg" alt="">
-            </div>
-            <div class="optech-shape2">
-              <img src="assets/images/shape/shape2.svg" alt="">
-            </div>
-          </div>
+      <div class="nz-head-center">
+        <h2 class="nz-title">Fuel Your Digital Future with Nazora's Cutting-Edge Tools</h2>
+        <p class="nz-lead">Strategy, design, and engineering in one team — so your product ships faster and performs longer.</p>
+      </div>
+      <div class="nz-tool-grid">
+        <article class="nz-tool-card">
+          <img src="assets/images/v2/illustration1.svg" alt="Website development">
+          <h4>Website Development</h4>
+          <p>SEO-ready business sites and landing pages designed to turn visitors into qualified enquiries.</p>
+          <a class="nz-learn" href="service_details">Learn More</a>
+        </article>
+        <article class="nz-tool-card">
+          <img src="assets/images/v2/illustration2.svg" alt="App development">
+          <h4>App Development</h4>
+          <p>Android and iOS apps with clean UX, secure architecture, and scalable backends.</p>
+          <a class="nz-learn" href="app_development_details">Learn More</a>
+        </article>
+        <article class="nz-tool-card">
+          <img src="assets/images/v2/illustration3.svg" alt="Software solutions">
+          <h4>Software Solutions</h4>
+          <p>Custom CRM, ERP, dashboards, and workflow systems built around how you actually work.</p>
+          <a class="nz-learn" href="software_development_details">Learn More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="nz-section nz-industry">
+    <div class="container">
+      <div class="nz-head-center">
+        <span class="nz-kicker">Industry</span>
+        <h2 class="nz-title">Fueled by Data, Driven by Nazora: Digital Transformation</h2>
+        <p class="nz-lead">From retail floors to professional firms — we tailor digital products to the way each industry sells, serves, and scales.</p>
+      </div>
+      <div class="nz-industry-grid">
+        <div class="nz-industry-item">
+          <div class="nz-icon-circle"><i class="ri-shopping-cart-2-line"></i></div>
+          <h4>Retail</h4>
+          <p>Storefronts, inventory flows, and customer journeys that keep checkout and operations aligned.</p>
+          <a class="nz-outline-btn" href="service">Learn More</a>
         </div>
-        <div class="col-lg-6 d-flex align-items-center">
-          <div class="optech-default-content ml40">
-            <h2>Why Businesses Choose Our Kolkata Team</h2>
-            <p>We combine strategy, design, development, and support in one team so your project stays focused, faster, and easier to manage.</p>
-            <div class="why-choose-list">
-              <div class="why-choose-item">
-                <i class="ri-map-pin-user-line"></i>
-                <div>
-                  <h4>Local understanding</h4>
-                  <p>Based in Kolkata with a practical understanding of local businesses and customer behaviour.</p>
+        <div class="nz-industry-item">
+          <div class="nz-icon-circle"><i class="ri-briefcase-4-line"></i></div>
+          <h4>Professional Services</h4>
+          <p>Client portals, booking systems, and reporting tools that reduce admin and raise trust.</p>
+          <a class="nz-outline-btn" href="service">Learn More</a>
+        </div>
+        <div class="nz-industry-item">
+          <div class="nz-icon-circle"><i class="ri-restaurant-2-line"></i></div>
+          <h4>Food &amp; Beverage</h4>
+          <p>Ordering, menus, delivery coordination, and brand sites built for busy service teams.</p>
+          <a class="nz-outline-btn" href="service">Learn More</a>
+        </div>
+      </div>
+
+      <div class="nz-industry-grid" style="margin-top:36px">
+        <div class="nz-industry-item">
+          <div class="nz-icon-circle"><i class="ri-graduation-cap-line"></i></div>
+          <h4>Education</h4>
+          <p>Learning platforms, student portals, and content systems that keep cohorts engaged.</p>
+          <a class="nz-outline-btn" href="service">Learn More</a>
+        </div>
+        <div class="nz-industry-item">
+          <div class="nz-icon-circle"><i class="ri-flashlight-line"></i></div>
+          <h4>Energy &amp; Utilities</h4>
+          <p>Dashboards, field workflows, and customer portals for complex operational data.</p>
+          <a class="nz-outline-btn" href="service">Learn More</a>
+        </div>
+        <div class="nz-industry-item">
+          <div class="nz-icon-circle"><i class="ri-line-chart-line"></i></div>
+          <h4>Financial Services</h4>
+          <p>Secure reporting, client onboarding, and insight tools with compliance-minded design.</p>
+          <a class="nz-outline-btn" href="service">Learn More</a>
+        </div>
+      </div>
+
+      <div class="nz-industry-cta">
+        <a class="optech-default-btn nz-btn-red" data-text="Get Started" href="contact"><span class="btn-wraper">Get Started →</span></a>
+        <a class="optech-default-btn nz-btn-outline" data-text="Free Consultations" href="<?php echo site_whatsapp_url(); ?>" target="_blank" rel="noopener"><span class="btn-wraper">Free Consultations</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="nz-section nz-why">
+    <div class="container">
+      <div class="nz-why-grid">
+        <div class="nz-why-copy">
+          <span class="nz-kicker">Why Choose Us</span>
+          <h2 class="nz-title">Your Digital Compass: Nazora Guides the Way</h2>
+          <p>We combine strategy, design, development, and support so projects stay focused, faster, and easier to manage from kickoff to launch.</p>
+          <ul class="nz-check-list">
+            <li>
+              <span class="tick"><i class="ri-check-line"></i></span>
+              <div>
+                <strong>Comprehensive Features</strong>
+                <span>Web, app, software, SEO, and AI automation under one roof.</span>
+              </div>
+            </li>
+            <li>
+              <span class="tick"><i class="ri-check-line"></i></span>
+              <div>
+                <strong>User-Friendly Interface</strong>
+                <span>Clean UX that customers and internal teams actually enjoy using.</span>
+              </div>
+            </li>
+            <li>
+              <span class="tick"><i class="ri-check-line"></i></span>
+              <div>
+                <strong>Data-Driven Insights</strong>
+                <span>Dashboards and reporting that turn activity into decisions.</span>
+              </div>
+            </li>
+            <li>
+              <span class="tick"><i class="ri-check-line"></i></span>
+              <div>
+                <strong>24/7 Premium Support</strong>
+                <span>Fast responses from a Kolkata-based team that stays with you after launch.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="nz-dash" aria-hidden="true">
+          <div class="nz-dash-frame">
+            <aside class="nz-dash-side">
+              <img class="logo-mini" src="assets/images/logo/nazora-logo.png" alt="">
+              <ul>
+                <li class="active">Overview</li>
+                <li>Balances</li>
+                <li>Projects</li>
+                <li>Reports</li>
+                <li>Goals</li>
+                <li>Settings</li>
+              </ul>
+            </aside>
+            <div class="nz-dash-main">
+              <div class="hello">
+                <strong>Hello Team</strong>
+                <span><?php echo date('M j, Y'); ?></span>
+              </div>
+              <div class="nz-dash-cards">
+                <div class="nz-mini-card">
+                  <div class="label">Total Delivery Value</div>
+                  <div class="value">₹24.0L+</div>
+                  <div class="nz-credit">
+                    <div>Active Product Suite</div>
+                    <div class="num">**** **** **** 2598</div>
+                    <div>Web · App · Software</div>
+                  </div>
+                </div>
+                <div class="nz-mini-card">
+                  <div class="label">Monthly Goal</div>
+                  <div class="value">₹2.0L</div>
+                  <div class="nz-bars" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                  </div>
                 </div>
               </div>
-              <div class="why-choose-item">
-                <i class="ri-time-line"></i>
-                <div>
-                  <h4>Fast delivery</h4>
-                  <p>Clear timelines, quick communication, and a delivery process built to keep momentum high.</p>
-                </div>
-              </div>
-              <div class="why-choose-item">
-                <i class="ri-shield-check-line"></i>
-                <div>
-                  <h4>Transparent pricing</h4>
-                  <p>Affordable plans and upfront guidance so you can move forward with confidence.</p>
+              <div class="nz-mini-card">
+                <div class="label">Weekly Comparison</div>
+                <div class="nz-bars" aria-hidden="true">
+                  <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
                 </div>
               </div>
             </div>
-            <div class="optech-extra-mt">
-              <a class='optech-default-btn' data-text='Talk to Our Team' href='contact'><span class="btn-wraper">Talk to Our Team</span></a>
+          </div>
+          <div class="nz-phone">
+            <div class="nz-phone-screen">
+              <div class="nz-phone-card">
+                <div>Nazora Pay</div>
+                <div class="num" style="letter-spacing:.1em;margin:8px 0">**** 1699</div>
+                <div>Platinum Plus</div>
+              </div>
+              <div class="nz-phone-icons">
+                <i class="ri-smartphone-line"></i>
+                <i class="ri-file-list-3-line"></i>
+                <i class="ri-send-plane-line"></i>
+                <i class="ri-copper-coin-line"></i>
+              </div>
+              <div class="nz-phone-tiles"><span></span><span></span></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End section -->
+  </section>
 
-  <div class="section optech-section-padding2 bg-light1">
+  <section class="nz-section nz-addons">
     <div class="container">
-      <div class="optech-section-title center">
-        <h2>Selected Work That Builds Trust</h2>
-        <p>We keep the portfolio visible, relevant, and easy to understand for new clients.</p>
+      <div class="nz-head-center">
+        <span class="nz-kicker">Extra Addons</span>
+        <h2 class="nz-title">Enhance Your Experience with Powerful Addons</h2>
       </div>
-    </div>
-    <div class="optech-3column-slider" data-aos="fade-up" data-aos-duration="800">
-      <div class="optech-portfolio-wrap2">
-        <div class="optech-portfolio-thumb2">
-          <img src="assets/images/projects/rg-logistic.png" alt="RC Logistics project">
-        </div>
-        <div class="optech-portfolio-data2-wrap">
-          <div class="optech-portfolio-data2">
-            <a href='portfolio_details?id=rc-logistics'>
-              <h4>RC Logistics</h4>
-            </a>
-            <p>Website design and logistics-focused conversion flow.</p>
+      <div class="nz-addon-grid">
+        <article class="nz-addon-card">
+          <img src="assets/images/v2/illustration1.svg" alt="Extra users">
+          <div>
+            <h4>Team Access</h4>
+            <p>Add collaborators, roles, and client logins so every stakeholder stays aligned without extra tools.</p>
           </div>
-          <a class='optech-portfolio-btn2' href='portfolio_details?id=rc-logistics'>
-            <span class="p-btn-wraper"><i class="ri-arrow-right-up-line"></i></span>
-          </a>
+        </article>
+        <article class="nz-addon-card">
+          <img src="assets/images/v2/illustration2.svg" alt="Integrations">
+          <div>
+            <h4>Post Integrations</h4>
+            <p>Connect CRM, WhatsApp, payment gateways, and analytics so your stack works as one system.</p>
+          </div>
+        </article>
+        <article class="nz-addon-card">
+          <img src="assets/images/v2/illustration3.svg" alt="Profitability report">
+          <div>
+            <h4>Profitability Report</h4>
+            <p>Live dashboards that surface revenue, costs, and growth signals your leadership can act on.</p>
+          </div>
+        </article>
+        <article class="nz-addon-card is-active">
+          <img src="assets/images/v3/service1.png" alt="Manage orders">
+          <div>
+            <h4>Manage Orders</h4>
+            <p>Order, inventory, and fulfilment flows designed for retail and service businesses that move fast.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="nz-scale">
+    <div class="container">
+      <div class="nz-head-center">
+        <span class="nz-kicker is-light">Business Scale</span>
+        <h2 class="nz-title">Tailored Digital Solutions for Every Stage of Business Growth</h2>
+        <p class="nz-lead">Whether you are launching, expanding, or running multi-branch operations — Nazora scales with you.</p>
+      </div>
+      <div class="nz-scale-grid">
+        <article class="nz-scale-card">
+          <img src="assets/images/v3/service1.png" alt="Startup">
+          <div class="body">
+            <h4>Startup</h4>
+            <p>Launch-ready websites and MVPs with clear pricing and fast iteration.</p>
+            <a href="pricing">Learn More →</a>
+          </div>
+        </article>
+        <article class="nz-scale-card">
+          <img src="assets/images/v3/service2.png" alt="Small business">
+          <div class="body">
+            <h4>Small &amp; Micro Business</h4>
+            <p>Practical tools for sales, branding, and day-to-day digital presence.</p>
+            <a href="pricing">Learn More →</a>
+          </div>
+        </article>
+        <article class="nz-scale-card">
+          <img src="assets/images/v3/service3.png" alt="Medium enterprise">
+          <div class="body">
+            <h4>Medium Enterprise</h4>
+            <p>Custom software, integrations, and reporting for growing teams.</p>
+            <a href="contact">Learn More →</a>
+          </div>
+        </article>
+        <article class="nz-scale-card">
+          <img src="assets/images/v3/service4.png" alt="Multi-branch">
+          <div class="body">
+            <h4>Multi-Branch</h4>
+            <p>Centralized systems that keep locations, data, and teams in sync.</p>
+            <a href="contact">Learn More →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="nz-section nz-testimonials">
+    <div class="container">
+      <div class="nz-head-center">
+        <span class="nz-kicker">Testimonial</span>
+        <h2 class="nz-title">Client Feedback &amp; Reviews</h2>
+      </div>
+      <div class="nz-testi-grid">
+        <article class="nz-testi-card">
+          <img src="assets/images/team/team1.png" alt="Rajesh Kumar">
+          <p>"Nazora's website redesign improved our lead quality and made the buying journey much easier for our customers."</p>
+          <h5>Rajesh Kumar</h5>
+          <span>E-Commerce Business Owner</span>
+        </article>
+        <article class="nz-testi-card">
+          <img src="assets/images/team/team2.png" alt="Priya Sharma">
+          <p>"With Nazora, our financial reporting became a breeze. The software fit our workflow without forcing us to change everything."</p>
+          <h5>Priya Sharma</h5>
+          <span>Operations Director</span>
+        </article>
+        <article class="nz-testi-card">
+          <img src="assets/images/team/team3.png" alt="Amit Patel">
+          <p>"The app development process was smooth, and the team kept us updated at every step — from wireframes to launch."</p>
+          <h5>Amit Patel</h5>
+          <span>Startup Founder</span>
+        </article>
+      </div>
+      <div class="nz-dots" aria-hidden="true"><i class="is-on"></i><i></i><i></i></div>
+    </div>
+  </section>
+
+  <section class="nz-download">
+    <div class="container">
+      <div class="nz-download-banner">
+        <div>
+          <span class="nz-kicker is-light">Start Your Project</span>
+          <h2>Navigating Growth, Elevating Businesses: Nazora's Path to Success</h2>
+          <a class="optech-default-btn" data-text="Get a Free Quote" href="contact"><span class="btn-wraper">Get a Free Quote</span></a>
+        </div>
+        <div class="nz-download-visual" aria-hidden="true">
+          <div class="nz-download-phone">
+            <div class="screen">
+              <div class="card-ui">
+                <div style="display:flex;justify-content:space-between;align-items:center">
+                  <strong>Nazora TECH</strong>
+                  <img src="assets/images/logo/nazora-logo.png" alt="" style="width:54px;height:auto">
+                </div>
+                <div style="margin-top:14px;letter-spacing:.14em">**** **** **** 1699</div>
+                <div style="margin-top:8px;opacity:.85">Business Suite · Exp 12/28</div>
+              </div>
+              <div class="chip-row">
+                <span><i class="ri-smartphone-line"></i></span>
+                <span><i class="ri-file-list-3-line"></i></span>
+                <span><i class="ri-send-plane-fill"></i></span>
+                <span><i class="ri-wallet-3-line"></i></span>
+              </div>
+              <div class="tile-row"><span></span><span></span></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <!-- End section -->
+  </section>
 
-  <div class="section optech-section-padding2 bg-light1">
+  <section class="nz-section nz-consult">
     <div class="container">
-      <div class="optech-section-title center">
-        <h2>Technologies We Use</h2>
-        <p class="text-muted">A practical stack for modern websites, apps, and business software.</p>
-      </div>
-      <div class="technology-badges">
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Tailwind CSS</span>
-        <span>Bootstrap</span>
-        <span>MySQL</span>
-        <span>PHP</span>
-        <span>Laravel</span>
-        <span>React</span>
-        <span>Express.js</span>
-        <span>Node.js</span>
-        <span>MongoDB</span>
+      <div class="nz-consult-card">
+        <div>
+          <span class="nz-kicker">Free Consultation</span>
+          <h2>Tell us what you want to build</h2>
+          <p>Share a short brief and we will respond with a clear next step, timeline guidance, and practical recommendations.</p>
+          <ul class="nz-check-list">
+            <li>
+              <span class="tick"><i class="ri-check-line"></i></span>
+              <div><strong>50+ services</strong><span>Web, app, software, SEO, docs, and automation.</span></div>
+            </li>
+            <li>
+              <span class="tick"><i class="ri-check-line"></i></span>
+              <div><strong>Kolkata-based team</strong><span>Local understanding with global delivery standards.</span></div>
+            </li>
+          </ul>
+        </div>
+        <form action="send_email.php" method="POST">
+          <div class="row-fields">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="tel" name="phone" placeholder="Phone number" required>
+          </div>
+          <input type="email" name="email" placeholder="Email address" required>
+          <select name="service" required>
+            <option value="" selected disabled>Select service</option>
+            <option value="Website Development">Website Development</option>
+            <option value="App Development">App Development</option>
+            <option value="Software Development">Software Development</option>
+            <option value="SEO">SEO</option>
+            <option value="Documentation Service">Documentation Service</option>
+          </select>
+          <textarea name="message" placeholder="Write your message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
       </div>
     </div>
-  </div>
-  <!-- End section -->
+  </section>
 
-  <div class="section optech-section-padding2 bg-light1">
+  <section class="nz-section" style="background:#fff;padding-top:40px">
     <div class="container">
-      <div class="optech-section-title center">
-        <span class="hero-eyebrow">Fresh from the blog</span>
-        <h2>Latest Blogs</h2>
-        <p>Short, practical articles that support SEO, trust, and repeat visits.</p>
+      <div class="nz-head-center">
+        <span class="nz-kicker">Fresh from the blog</span>
+        <h2 class="nz-title">Latest Blogs</h2>
+        <p class="nz-lead">Short, practical articles that support SEO, trust, and repeat visits.</p>
       </div>
       <?php if ($latestBlogPosts) : ?>
       <div class="snf-blog-home-grid">
@@ -266,124 +429,20 @@ include 'header.php';
       <p class="text-center text-muted">New articles will appear here soon.</p>
       <?php endif; ?>
       <div class="text-center mt-4">
-        <a class='optech-default-btn' href='blog' data-text='Visit Blog'><span class="btn-wraper">Visit Blog</span></a>
+        <a class="optech-default-btn nz-btn-red" href="blog" data-text="Visit Blog"><span class="btn-wraper">Visit Blog</span></a>
       </div>
     </div>
-  </div>
-  <!-- End section -->
+  </section>
 
-  <div class="section optech-section-padding2 bg-light1">
+  <section class="nz-section" style="background:var(--nz-soft)">
     <div class="container">
-      <div class="optech-section-title center">
-        <h2>Client Reviews</h2>
-        <p>Clear delivery and practical support are what clients remember.</p>
-      </div>
-      <div class="optech-3column-slider2" data-aos="fade-up" data-aos-duration="800">
-        <div class="optech-t-box3 mb-0">
-          <div class="optech-t-data3">
-            <div class="optech-t-rating3">
-              <ul>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-              </ul>
-            </div>
-            <p>"Their website redesign improved our lead quality and made the buying journey much easier for our customers."</p>
-            <div class="optech-t-footer">
-              <div class="optech-t-author">
-                <h5>Rajesh Kumar</h5>
-                <span>E-Commerce Business Owner</span>
-              </div>
-              <div class="optech-t-quote3">
-                <img src="assets/images/v1/quote.svg" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="optech-t-box3 mb-0">
-          <div class="optech-t-data3">
-            <div class="optech-t-rating3">
-              <ul>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-              </ul>
-            </div>
-            <p>"The software solution was tailored to our workflow and saved our team a lot of manual work."</p>
-            <div class="optech-t-footer">
-              <div class="optech-t-author">
-                <h5>Priya Sharma</h5>
-                <span>Operations Director</span>
-              </div>
-              <div class="optech-t-quote3">
-                <img src="assets/images/v1/quote.svg" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="optech-t-box3 mb-0">
-          <div class="optech-t-data3">
-            <div class="optech-t-rating3">
-              <ul>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-              </ul>
-            </div>
-            <p>"The app development process was smooth, and the team kept us updated at every step."</p>
-            <div class="optech-t-footer">
-              <div class="optech-t-author">
-                <h5>Amit Patel</h5>
-                <span>Startup Founder</span>
-              </div>
-              <div class="optech-t-quote3">
-                <img src="assets/images/v1/quote.svg" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="optech-t-box3 mb-0">
-          <div class="optech-t-data3">
-            <div class="optech-t-rating3">
-              <ul>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-                <li><img src="assets/images/v1/rating.svg" alt=""></li>
-              </ul>
-            </div>
-            <p>"They were responsive, practical, and focused on outcomes instead of just delivering pages."</p>
-            <div class="optech-t-footer">
-              <div class="optech-t-author">
-                <h5>Neha Singh</h5>
-                <span>Marketing Manager</span>
-              </div>
-              <div class="optech-t-quote3">
-                <img src="assets/images/v1/quote.svg" alt="">
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End section -->
-
-  <div class="section optech-section-padding2 bg-light1">
-    <div class="container">
-      <div class="optech-section-title center">
-        <h2>Frequently Asked Questions</h2>
-        <p>Quick answers for businesses comparing options or requesting a quote.</p>
+      <div class="nz-head-center">
+        <span class="nz-kicker">FAQ</span>
+        <h2 class="nz-title">Frequently Asked Questions</h2>
+        <p class="nz-lead">Quick answers for businesses comparing options or requesting a quote.</p>
       </div>
       <div class="faq-accordion init-wrap">
-        <div class="faq-item open">
+        <div class="faq-item open" id="faq">
           <h5 class="init-header">Do you build custom websites and business apps?</h5>
           <div class="init-body">
             <p>Yes. We build custom websites, mobile apps, and internal software systems that match your goals and budget.</p>
@@ -409,25 +468,7 @@ include 'header.php';
         </div>
       </div>
     </div>
-  </div>
-  <!-- End section -->
-
-  <div class="section optech-section-padding2 bg-light1 home-cta-section">
-    <div class="container">
-      <div class="home-cta-card" data-aos="fade-up" data-aos-duration="600">
-        <div class="optech-cta-content center">
-          <span class="hero-eyebrow hero-eyebrow--light">Let's work together</span>
-          <h2>Ready to discuss your next website, app, or software project?</h2>
-          <p>Get a clear plan, fast response, and a team that keeps the conversation focused on results.</p>
-          <div class="hero-cta-row justify-content-center">
-            <a class='optech-default-btn optech-white-btn' data-text='Contact Us Now' href='contact'><span class="btn-wraper">Contact Us Now</span></a>
-            <a class='optech-default-btn hero-whatsapp-btn' data-text='WhatsApp Us' href='https://wa.me/916297616918?text=Hi%20Sk%20Online%20Service%20and%20IT%20Solution,%20I%20need%20a%20quote.' target="_blank" rel="noopener"><span class="btn-wraper">WhatsApp Us</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End section -->
+  </section>
 
   <script src="assets/js/contact-form.js"></script>
 

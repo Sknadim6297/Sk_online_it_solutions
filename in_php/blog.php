@@ -2,14 +2,14 @@
 require_once __DIR__ . '/includes/blog_app.php';
 require_once __DIR__ . '/includes/blog_frontend.php';
 
-$pageTitle = 'Blog | Sk Online Service and IT Solution';
+$pageTitle = 'Blog | ' . site_company_name();
 $pageDescription = 'Read practical articles on web development, SEO, mobile apps, software solutions, and digital growth from our Kolkata team.';
 $pageKeywords = 'IT blog Kolkata, web development blog, SEO tips, digital marketing articles';
 $pageCanonical = blog_url('blog');
 $pageSchemaMarkup = json_encode([
     '@context' => 'https://schema.org',
     '@type' => 'Blog',
-    'name' => 'Sk Online Service and IT Solution Blog',
+    'name' => SITE_COMPANY_BLOG,
     'url' => $pageCanonical,
 ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
 

@@ -25,9 +25,9 @@ $navItems = [
     <aside class="admin-sidebar" id="adminSidebar">
       <div class="admin-sidebar-inner">
         <a href="dashboard.php" class="admin-brand">
-          <img src="../assets/images/logo/header_logo-removebg.png" alt="SNF Studio" class="admin-brand-logo">
+          <img src="../assets/images/logo/header_logo-removebg.png" alt="<?php echo blog_escape(site_company_name()); ?>" class="admin-brand-logo">
           <div class="admin-brand-text">
-            <strong>SNF Studio</strong>
+            <strong><?php echo blog_escape(site_company_name()); ?></strong>
             <span>Admin Panel</span>
           </div>
         </a>

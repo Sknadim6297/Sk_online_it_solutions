@@ -8,8 +8,8 @@ $activeMenu = 'settings';
 $errors = [];
 
 $defaults = [
-    'site_name' => 'SNF Studio Blog',
-    'site_description' => 'Premium articles, updates, and insights from the SNF Studio team.',
+    'site_name' => SITE_COMPANY_BLOG,
+    'site_description' => 'Premium articles, updates, and insights from the ' . SITE_COMPANY_NAME . ' team.',
     'contact_email' => 'admin@snfteam.local',
     'posts_per_page' => '9',
 ];

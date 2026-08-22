@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <div class="admin-login-wrap">
     <section class="admin-login-hero">
       <div>
-        <img src="../assets/images/logo/header_logo-removebg.png" alt="SNF Studio" class="login-logo">
+        <img src="../assets/images/logo/header_logo-removebg.png" alt="<?php echo blog_escape(site_company_name()); ?>" class="login-logo">
         <h1>Admin Control Center</h1>
         <p>Manage blog content, SEO settings, and media from one premium dashboard.</p>
       </div>
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <section class="d-flex align-items-center justify-content-center p-4">
       <div class="admin-login-card">
         <h2>Welcome back</h2>
-        <p class="admin-muted mb-4">Sign in to your SNF Studio admin account.</p>
+        <p class="admin-muted mb-4">Sign in to your <?php echo blog_escape(site_company_name()); ?> admin account.</p>
 
         <?php if ($errors) : ?>
           <div class="alert alert-danger">
