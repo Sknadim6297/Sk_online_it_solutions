@@ -1,0 +1,10 @@
+.git
+.gitignore
+*.md
+terminals
+agent-transcripts
+.cursor
+**/node_modules
+storage/blog.sqlite
+storage/uploads/**
+!storage/uploads/.gitkeep
