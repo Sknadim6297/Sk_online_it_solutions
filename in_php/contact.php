@@ -68,14 +68,15 @@
             <div class="optech-contact-info-column">
               <div class="optech-contact-info">
                 <i class="ri-map-pin-2-fill"></i>
-                <h5>Address</h5>
-                <p>Kestopur, Kolkata<br>India</p>
+                <h5>Business Information</h5>
+                <p><strong>Legal Name:</strong> SK NADIM<br>
+                  <strong>Operating Address:</strong> Kestopur, Kolkata</p>
               </div>
               <div class="optech-contact-info">
                 <i class="ri-mail-fill"></i>
                 <h5>Contact</h5>
-                <a href="mailto:skonlineitsolution@gmail.com">skonlineitsolution@gmail.com</a>
-                <a href="tel:6297616918">+91-6297616918</a>
+                <a href="mailto:info@nazora.tech">info@nazora.tech</a>
+                <a href="tel:9332016918">9332016918</a>
               </div>
             </div>
           </div>

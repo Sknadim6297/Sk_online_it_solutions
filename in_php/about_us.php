@@ -36,6 +36,15 @@
 						<h2>Your Complete IT & Service Solution Partner</h2>
 					<p><?php echo htmlspecialchars(site_company_name(), ENT_QUOTES, 'UTF-8'); ?> is a Kolkata-based technology partner delivering websites, mobile apps, software platforms, and AI automation for businesses that want clear results.</p>
 						<p>Founded with a focus on practical delivery, we've helped 100+ clients move from idea to launch with transparent pricing, fast communication, and long-term support.</p>
+						<div class="optech-contact-info-column">
+							<div class="optech-contact-info">
+								<h5>Business Information</h5>
+								<p><strong>Legal Name:</strong> SK NADIM<br>
+								<strong>Operating Address:</strong> Kestopur, Kolkata<br>
+								<strong>Email:</strong> <a href="mailto:info@nazora.tech">info@nazora.tech</a><br>
+								<strong>Phone:</strong> <a href="tel:9332016918">9332016918</a></p>
+							</div>
+						</div>
 						<div class="optech-extra-mt">
 							<a class='optech-default-btn' data-text='Get In Touch' href='contact'><span class="btn-wraper">Get In Touch</span></a>
 						</div>

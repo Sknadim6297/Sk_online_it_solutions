@@ -64,11 +64,13 @@
         </a>
         <p>Copyright © <?php echo date('Y'); ?> <?php echo htmlspecialchars(site_company_name(), ENT_QUOTES, 'UTF-8'); ?>. All rights reserved.</p>
         <div class="legal">
-          <a href="contact">Terms of use</a>
+          <a href="terms_and_conditions">Terms &amp; Conditions</a>
           <span>|</span>
-          <a href="contact">Privacy Policy</a>
+          <a href="privacy_policy">Privacy Policy</a>
           <span>|</span>
-          <a href="contact">Cookie Policy</a>
+          <a href="refund_policy">Refund Policy</a>
+          <span>|</span>
+          <a href="cancellation_policy">Cancellation Policy</a>
         </div>
       </div>
     </div>

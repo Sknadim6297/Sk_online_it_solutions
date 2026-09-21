@@ -15,8 +15,8 @@ WORKDIR /var/www/html
 COPY . /var/www/html/
 
 # Site runs at domain root on Render (not /SNF_TEAM/in_php/)
-RUN sed -i 's|RewriteBase /SNF_TEAM/in_php/|RewriteBase /|' .htaccess \
-    && sed -i 's|ErrorDocument 404 /SNF_TEAM/in_php/index.php|ErrorDocument 404 /index.php|' .htaccess \
+RUN sed -i 's|RewriteBase /Sk_online_it_solutions/in_php/|RewriteBase /|' .htaccess \
+    && sed -i 's|ErrorDocument 404 /Sk_online_it_solutions/in_php/index.php|ErrorDocument 404 /index.php|' .htaccess \
     && mkdir -p storage/uploads/blog \
     && chown -R www-data:www-data /var/www/html \
     && chmod -R 775 storage
